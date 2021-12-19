@@ -1,0 +1,15 @@
+dad:left bf:right
+:1:GFnormal:0.05:normal:Like i said im not the best at singing,
+:1:GFnormal:0.05:normal:but my dad is so i asked him to help you with…
+:1:GFtalkIdle:0.05:normal:drum roll please dun dun dun dun
+:1:GFxcited:0.05:normal:RAPPINGGGGGGG
+:1:happy:0.05:normal:Awww you’re so adorable,
+:1:happy:0.05:normal:and thank you so much!
+:1:GFtalkIdle:0.05:normal:dont worry about it, it's what i do for you
+:1:br:0.05:normal:THEN YOU BETTER EAT SOME PU-
+:0:smug:0.05:normal:so you wanted to learn to sing better Sam? 
+:1:embarrassed:0.05:normal:OH! I-
+:1:talk:0.05:normal:Yeah thats why im here
+:0:talkIdle:0.05:angry:well you came to the right place Sam
+:0:talkIdle:0.05:angry:Sweetie, play the beat for me?
+:1:GFxcited:0.05:normal:you got it dad

@@ -1,0 +1,25 @@
+pico:left bf:right
+:0:tired:0.05:normal:do you even know why I brought you here
+:1:confused:0.05:normal:no? I assumed you wanted to make friends
+:0:mockingly:0.05:normal:your kidding, right? Did you not listen to the
+:0:mockingly:0.05:normal:dude at that on the hunted house?
+:0:mockingly:0.05:normal:we aren’t from this place
+:1:confused:0.05:normal:like a different state?
+:0:angryIdle:0.05:normal:NO NOT FROM THIS PLANET
+:1:excited:0.05:normal:YOU GUYS ARE ALIENS? THATS SO COOL
+:0:furious:0.05:normal:NO WE AREN'T EVEN FROM YOUR UNIVERSE
+:1:dumbfounded:0.05:normal:w- w-
+:1:shocked:0.05:angry:WHAT?!
+:1:scared:0.05:angry:THAT DOESN'T EVEN MAKE SENSE
+:1:scared:0.05:angry:HOW ARE YOU HERE DID YOU WARP HERE
+:1:shocked:0.05:angry:WAS IT PLOT ARMOR?
+:1:scared:0.05:angry:THIS MAKES NO SENSE ALIENS MAKE MORE SENSE
+:1:scared:0.05:angry:THAN ANYTHING ELSE
+:1:scared:0.05:angry:EXPLAIN NOW DO IT EXPLAIN HOW WHY!?-
+:0:calmingdown:0.05:normal:I wanted to ask if you knew why I’m here 
+:0:angryIdle:0.05:normal:but now
+:0:angryIdle:0.05:normal:I want to take out my aggression on you idiot
+:1:scared:0.05:normal:w-what?
+
+
+

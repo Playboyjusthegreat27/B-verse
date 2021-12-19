@@ -1,0 +1,8 @@
+pico:left bf:right
+:1:happy:0.05:normal:okay nice!
+:1:confused:0.05:normal:But uh I gotta go so I’m wondering if it’s good
+:1:confused:0.05:normal:if I can leave now?
+:0:smug:0.05:normal:not just yet I still have another song for you
+:1:upset:0.05:normal:alright just put down the banana
+:0:talkIdle:0.05:normal:nah
+:1:sad:0.05:normal: (Insert all these girls are the same)
