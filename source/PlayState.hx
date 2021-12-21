@@ -166,6 +166,8 @@ class PlayState extends MusicBeatState
 	var phillyCityLightsEventTween:FlxTween;
 	var trainSound:FlxSound;
 
+	var newBG:BGSprite;
+
 	var limoKillingState:Int = 0;
 	var limo:BGSprite;
 	var limoMetalPole:BGSprite;
@@ -618,6 +620,10 @@ class PlayState extends MusicBeatState
 					stageCurtains.updateHitbox();
 					add(stageCurtains);
 				}
+
+				newBG = new BGSprite('chaos', -600, -200, 0.95, 0.95);
+				newBG.alpha = 0;
+				add(newBG);
 		}
 
 		backgroundGroup = new FlxTypedGroup<FlxSprite>();
@@ -3572,6 +3578,17 @@ class PlayState extends MusicBeatState
 
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();
+
+		if (SONG.song.toLowerCase() == 'dad-battle') //Biro has me locked in the basement please
+		{
+			var black:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+			switch (curStep)
+			{			
+				case 768:
+					newBG.alpha = 1;
+					FlxG.camera.flash(FlxColor.WHITE, 0.3);
+			}
+		}
 
 		if (curBeat % gfSpeed == 0 && !gf.stunned)
 		{

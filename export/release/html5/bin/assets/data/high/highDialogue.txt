@@ -1,4 +1,0 @@
-psychic:left bf:right
-:0:talk:0.05:normal:What brings you here so late at night?
-:1:talk:0.05:normal:Beep.
-:0:angry:0.05:angry:Drop the act already.
