@@ -1,0 +1,188 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				35,
+				50
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "BF NOTE LEFT MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				-5
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "BF NOTE DOWN MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-26,
+				58
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "BF NOTE UP MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-27,
+				16
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "BF NOTE RIGHT MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				38,
+				16
+			],
+			"anim": "hurt",
+			"fps": 24,
+			"name": "BF hit",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				3,
+				-2
+			],
+			"anim": "scared",
+			"fps": 24,
+			"name": "BF idle shaking",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				658,
+				65
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "BF dies",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				161,
+				1
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "BF Dead Loop",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				161,
+				65
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "BF Dead confirm",
+			"indices": []
+		},
+		{
+			"offsets": [
+				28,
+				38
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hey",
+			"indices": [],
+			"name": "BF HEY!!"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				59,
+				183
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "BF idle sit",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				38,
+				183
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left sit",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				183
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down sit",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				31,
+				212
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up sit",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				184
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right sit",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/BFsit",
+	"position": [
+		220,
+		340
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		100,
+		255
+	],
+	"camera_position": [
+		-40,
+		30
+	],
+	"sing_duration": 4,
+	"scale": 0.6
+}

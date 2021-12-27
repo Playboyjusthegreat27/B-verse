@@ -164,6 +164,9 @@ class HXCPP_CLASS_ATTRIBUTES PlayState_obj : public  ::MusicBeatState_obj
 		 ::flixel::group::FlxTypedGroup phillyCityLightsEvent;
 		 ::flixel::tweens::FlxTween phillyCityLightsEventTween;
 		 ::flixel::_hx_system::FlxSound trainSound;
+		 ::BGSprite newBG;
+		 ::BGSprite chair;
+		 ::BGSprite chair1;
 		int limoKillingState;
 		 ::BGSprite limo;
 		 ::BGSprite limoMetalPole;

@@ -1,20 +1,20 @@
 -main ApplicationMain 
--cp /Users/fernandojr/coding crap/flixel/4,10,0
+-cp /usr/local/lib/haxe/lib/flixel/4,10,0
 -D flixel=4.10.0
 --macro openfl.utils._internal.ExtraParamsMacro.include()
--cp /Users/fernandojr/coding crap/openfl/9,1,0/src
+-cp /usr/local/lib/haxe/lib/openfl/9,1,0/src
 -D openfl=9.1.0
 --macro lime._internal.macros.DefineMacro.run()
--cp /Users/fernandojr/coding crap/lime/7,9,0/src
+-cp /usr/local/lib/haxe/lib/lime/7,9,0/src
 -D lime=7.9.0
--cp /Users/fernandojr/coding crap/flixel-addons/2,11,0
+-cp /usr/local/lib/haxe/lib/flixel-addons/git
 -D flixel-addons=2.11.0
 --macro keep('IntIterator')
--cp /Users/fernandojr/coding crap/hscript/2,4,0
+-cp /usr/local/lib/haxe/lib/hscript/2,4,0
 -D hscript=2.4.0
--cp /Users/fernandojr/coding crap/flixel-ui/2,4,0
+-cp /usr/local/lib/haxe/lib/flixel-ui/2,4,0
 -D flixel-ui=2.4.0
--cp /Users/fernandojr/coding crap/actuate/1,8,9/src
+-cp /usr/local/lib/haxe/lib/actuate/1,8,9/src
 -D actuate=1.8.9
 -cp source
 -D howlerjs

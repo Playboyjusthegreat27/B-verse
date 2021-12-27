@@ -463,7 +463,7 @@ HXLINE( 134)		this->genBoyOffsets();
 HXLINE( 136)		this->camFollow =  ::flixel::FlxObject_obj::__alloc( HX_CTX ,0,0,2,2);
 HXLINE( 137)		this->camFollow->screenCenter(null());
 HXLINE( 138)		this->add(this->camFollow);
-HXLINE( 140)		 ::flixel::text::FlxText tipText =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,(::flixel::FlxG_obj::width - 20),(::flixel::FlxG_obj::height - 5),0,HX_("ESC - Go back to the Game\r\n\t\t\t\nE/Q - Camera Zoom In/Out\r\n\t\t\t\nJKLI - Move Camera\r\n\t\t\t\r\n\t\t\t\nW/S - Previous/Next Animation\r\n\t\t\t\nSpace - Play Animation\r\n\t\t\t\nArrow Keys - Move Character Offset\r\n\t\t\t\nHold Shift to Move 10x faster\n",92,de,b9,f5),15,null());
+HXLINE( 140)		 ::flixel::text::FlxText tipText =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,(::flixel::FlxG_obj::width - 20),(::flixel::FlxG_obj::height - 5),0,HX_("ESC - Go back to the Game\n\t\t\t\nE/Q - Camera Zoom In/Out\n\t\t\t\nJKLI - Move Camera\n\t\t\t\n\t\t\t\nW/S - Previous/Next Animation\n\t\t\t\nSpace - Play Animation\n\t\t\t\nArrow Keys - Move Character Offset\n\t\t\t\nHold Shift to Move 10x faster\n",01,d3,11,14),15,null());
 HXLINE( 149)		tipText->set_cameras(::Array_obj< ::Dynamic>::__new(1)->init(0,this->camHUD));
 HXLINE( 150)		tipText->scrollFactor->set(null(),null());
 HXLINE( 151)		tipText->set_color(-65536);
