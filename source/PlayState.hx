@@ -167,12 +167,9 @@ class PlayState extends MusicBeatState
 	var trainSound:FlxSound;
 
 	var newBG:BGSprite;
-<<<<<<< HEAD:source 2/PlayState.hx
 	var chair:BGSprite;
 	var chair1:BGSprite;
 
-=======
->>>>>>> d4e52f1fa992d90ac89c51ae882fd6cdb00c714e:source/PlayState.hx
 
 	var limoKillingState:Int = 0;
 	var limo:BGSprite;
@@ -627,7 +624,6 @@ class PlayState extends MusicBeatState
 					add(stageCurtains);
 				}
 
-<<<<<<< HEAD:source 2/PlayState.hx
 				newBG = new BGSprite('bgdadbattle', -394, -137, 0.95, 0.95);
 				newBG.alpha = 0;
 				add(newBG);
@@ -641,11 +637,6 @@ class PlayState extends MusicBeatState
 				chair1.setGraphicSize(Std.int(chair1.width * 1.3));
 				chair1.alpha = 0;
 				add(chair1);
-=======
-				newBG = new BGSprite('chaos', -600, -200, 0.95, 0.95);
-				newBG.alpha = 0;
-				add(newBG);
->>>>>>> d4e52f1fa992d90ac89c51ae882fd6cdb00c714e:source/PlayState.hx
 		}
 
 		backgroundGroup = new FlxTypedGroup<FlxSprite>();
@@ -3623,12 +3614,9 @@ class PlayState extends MusicBeatState
 			{			
 				case 768:
 					newBG.alpha = 1;
-<<<<<<< HEAD:source 2/PlayState.hx
 					chair.alpha = 1;
 					chair1.alpha = 1;
 
-=======
->>>>>>> d4e52f1fa992d90ac89c51ae882fd6cdb00c714e:source/PlayState.hx
 					FlxG.camera.flash(FlxColor.WHITE, 0.3);
 			}
 		}
