@@ -20,7 +20,7 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_c12a8c963aef5ef1_346_new,"__ASSET__flixel_flixel_ui_img_tab_png","new",0x297a327a,"__ASSET__flixel_flixel_ui_img_tab_png.new","lime/_internal/macros/AssetsMacro.hx",346,0xc651f030)
-HX_LOCAL_STACK_FRAME(_hx_pos_be3fc4b8b0da53a0_906_boot,"__ASSET__flixel_flixel_ui_img_tab_png","boot",0x198af8d8,"__ASSET__flixel_flixel_ui_img_tab_png.boot","ManifestResources.hx",906,0xf77aa668)
+HX_LOCAL_STACK_FRAME(_hx_pos_be3fc4b8b0da53a0_915_boot,"__ASSET__flixel_flixel_ui_img_tab_png","boot",0x198af8d8,"__ASSET__flixel_flixel_ui_img_tab_png.boot","ManifestResources.hx",915,0xf77aa668)
 
 void __ASSET__flixel_flixel_ui_img_tab_png_obj::__construct( ::lime::graphics::ImageBuffer buffer, ::Dynamic offsetX, ::Dynamic offsetY, ::Dynamic width, ::Dynamic height, ::Dynamic color, ::lime::graphics::ImageType type){
             	HX_STACKFRAME(&_hx_pos_c12a8c963aef5ef1_346_new)
@@ -141,8 +141,8 @@ void __ASSET__flixel_flixel_ui_img_tab_png_obj::__register()
 void __ASSET__flixel_flixel_ui_img_tab_png_obj::__boot()
 {
 {
-            	HX_STACKFRAME(&_hx_pos_be3fc4b8b0da53a0_906_boot)
-HXDLIN( 906)		resourceName = HX_("__ASSET__:image___ASSET__flixel_flixel_ui_img_tab_png",3a,ba,84,7e);
+            	HX_STACKFRAME(&_hx_pos_be3fc4b8b0da53a0_915_boot)
+HXDLIN( 915)		resourceName = HX_("__ASSET__:image___ASSET__flixel_flixel_ui_img_tab_png",3a,ba,84,7e);
             	}
 }
 

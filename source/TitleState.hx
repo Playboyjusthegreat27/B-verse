@@ -155,9 +155,12 @@ class TitleState extends MusicBeatState
 			// music.play();
 
 			if(FlxG.sound.music == null) {
-                FlxG.sound.playMusic(Paths.music('menu_' + FlxG.random.int(1, 2)));
+				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+
+				FlxG.sound.music.fadeIn(4, 0, 0.7);
 			}
 		}
+
 
 		Conductor.changeBPM(102);
 		persistentUpdate = true;

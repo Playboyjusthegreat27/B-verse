@@ -77,7 +77,7 @@ class FreeplayState extends MusicBeatState
 			if (FlxG.sound.music != null)
 			{
 				if (!FlxG.sound.music.playing)
-                FlxG.sound.playMusic(Paths.music('menu_' + FlxG.random.int(1, 2)));
+					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			}
 		 */
 

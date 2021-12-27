@@ -169,6 +169,7 @@ class PlayState extends MusicBeatState
 	var newBG:BGSprite;
 	var chair:BGSprite;
 	var chair1:BGSprite;
+	var middlechair:BGSprite;
 
 
 	var limoKillingState:Int = 0;
@@ -288,6 +289,12 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.song.toLowerCase())
 		{
+			case 'chaos': //haha I hope no one sees this -Biro
+			defaultCamZoom = 0.5;
+			var chaos:BGSprite = new BGSprite('chaos', -600, -600, 0.9, 0.9);
+			chaos.setGraphicSize(Std.int(chaos.width * 1.6));
+			add(chaos); 
+
 			case 'spookeez':
                         defaultCamZoom = 0.7;
                         curStage = 'spooky';
@@ -597,7 +604,7 @@ class PlayState extends MusicBeatState
 					add(tutorial);
 
 			default:
-				defaultCamZoom = 0.7;
+				defaultCamZoom = 0.9;
 				curStage = 'stage';
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -633,10 +640,14 @@ class PlayState extends MusicBeatState
 				chair.alpha = 0;
 				add(chair);
 
+				middlechair = new BGSprite('middle chair', -556, -54, 0.95, 0.95);
+				middlechair.setGraphicSize(Std.int(middlechair.width * 0.8));
+				middlechair.alpha = 0;
+				add(middlechair);
+
 				chair1 = new BGSprite('Tabledadbattle', -556, 54, 0.95, 0.95);
 				chair1.setGraphicSize(Std.int(chair1.width * 1.3));
 				chair1.alpha = 0;
-				add(chair1);
 		}
 
 		backgroundGroup = new FlxTypedGroup<FlxSprite>();
@@ -752,6 +763,10 @@ class PlayState extends MusicBeatState
 
 		foregroundGroup = new FlxTypedGroup<FlxSprite>();
 		add(foregroundGroup);
+
+		if (curStage == 'stage')
+
+			add(chair1);
 
 		if(curStage == 'spooky') {
 			add(halloweenWhite);
@@ -2801,7 +2816,7 @@ class PlayState extends MusicBeatState
 
 			if (storyPlaylist.length <= 0)
 			{
-                FlxG.sound.playMusic(Paths.music('menu_' + FlxG.random.int(1, 2)));
+				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 
 				transIn = FlxTransitionableState.defaultTransIn;
 				transOut = FlxTransitionableState.defaultTransOut;
@@ -2863,7 +2878,7 @@ class PlayState extends MusicBeatState
 		{
 			trace('WENT BACK TO FREEPLAY??');
 			MusicBeatState.switchState(new FreeplayState());
-			FlxG.sound.playMusic(Paths.music('menu_' + FlxG.random.int(1, 2)));
+			FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			usedPractice = false;
 			changedDifficulty = false;
 			cpuControlled = false;
@@ -3615,6 +3630,7 @@ class PlayState extends MusicBeatState
 				case 768:
 					newBG.alpha = 1;
 					chair.alpha = 1;
+					middlechair.alpha = 1;
 					chair1.alpha = 1;
 
 					FlxG.camera.flash(FlxColor.WHITE, 0.3);

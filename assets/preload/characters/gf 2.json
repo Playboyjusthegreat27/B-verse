@@ -3,86 +3,6 @@
 		{
 			"loop": false,
 			"offsets": [
-				-270,
-				-183
-			],
-			"fps": 24,
-			"anim": "cheer",
-			"indices": [],
-			"name": "GF Cheer"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-249,
-				-171
-			],
-			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "GF left note"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-281,
-				-170
-			],
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "GF Down Note"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-287,
-				-150
-			],
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "GF Up Note"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-110,
-				-164
-			],
-			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "GF Right Note"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-250,
-				-164
-			],
-			"fps": 24,
-			"anim": "sad",
-			"indices": [
-				0,
-				1,
-				2,
-				3,
-				4,
-				5,
-				6,
-				7,
-				8,
-				9,
-				10,
-				11,
-				12
-			],
-			"name": "gf sad"
-		},
-		{
-			"loop": false,
-			"offsets": [
 				-248,
 				-167
 			],
@@ -134,67 +54,16 @@
 				29
 			],
 			"name": "GF Dancing Beat"
-		},
-		{
-			"loop": true,
-			"offsets": [
-				164,
-				-135
-			],
-			"fps": 24,
-			"anim": "hairBlow",
-			"indices": [
-				0,
-				1,
-				2,
-				3
-			],
-			"name": "GF Dancing Beat Hair blowing"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				97,
-				-111
-			],
-			"fps": 24,
-			"anim": "hairFall",
-			"indices": [
-				0,
-				1,
-				2,
-				3,
-				4,
-				5,
-				6,
-				7,
-				8,
-				9,
-				10,
-				11
-			],
-			"name": "GF Dancing Beat Hair Landing"
-		},
-		{
-			"loop": true,
-			"offsets": [
-				-124,
-				-173
-			],
-			"fps": 24,
-			"anim": "scared",
-			"indices": [],
-			"name": "GF FEAR"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/GF_assets",
+	"image": "characters/gfwhy",
 	"position": [
-		0,
-		0
+		-60,
+		-160
 	],
 	"healthicon": "gf",
-	"flip_x": true,
+	"flip_x": false,
 	"healthbar_colors": [
 		255,
 		0,

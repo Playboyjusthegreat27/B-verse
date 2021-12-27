@@ -167,6 +167,7 @@ class HXCPP_CLASS_ATTRIBUTES PlayState_obj : public  ::MusicBeatState_obj
 		 ::BGSprite newBG;
 		 ::BGSprite chair;
 		 ::BGSprite chair1;
+		 ::BGSprite middlechair;
 		int limoKillingState;
 		 ::BGSprite limo;
 		 ::BGSprite limoMetalPole;

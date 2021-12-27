@@ -81,7 +81,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			else
 				MusicBeatState.switchState(new FreeplayState());
 
-			FlxG.sound.playMusic(Paths.music('menu_' + FlxG.random.int(1, 2)));
+			FlxG.sound.playMusic(Paths.music('freakyMenu'));
 		}
 
 		if (bf.animation.curAnim.name == 'firstDeath')
