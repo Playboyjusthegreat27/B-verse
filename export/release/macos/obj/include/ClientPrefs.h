@@ -51,7 +51,7 @@ class HXCPP_CLASS_ATTRIBUTES ClientPrefs_obj : public ::hx::Object
 
 		static void __boot();
 		static bool downScroll;
-		static bool sticky;
+		static bool dami;
 		static bool middleScroll;
 		static bool showFPS;
 		static bool flashing;

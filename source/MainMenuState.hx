@@ -306,9 +306,7 @@ class MainMenuState extends MusicBeatState
 				}
 			}
 			#if desktop
-			else if (FlxG.keys.justPressed.SEVEN)
 			{
-				selectedSomethin = true;
 			}
 			#end
 		}

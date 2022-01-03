@@ -162,8 +162,8 @@ HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_779_update,"PreferencesSubstate","
 HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_791_update,"PreferencesSubstate","update",0x0402888e,"PreferencesSubstate.update","OptionsState.hx",791,0x342db2ab)
 HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_794_update,"PreferencesSubstate","update",0x0402888e,"PreferencesSubstate.update","OptionsState.hx",794,0x342db2ab)
 HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_929_changeSelection,"PreferencesSubstate","changeSelection",0x3fb89d97,"PreferencesSubstate.changeSelection","OptionsState.hx",929,0x342db2ab)
-HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_1038_reloadValues,"PreferencesSubstate","reloadValues",0xc2328860,"PreferencesSubstate.reloadValues","OptionsState.hx",1038,0x342db2ab)
-HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_1096_unselectableCheck,"PreferencesSubstate","unselectableCheck",0x1b4089b4,"PreferencesSubstate.unselectableCheck","OptionsState.hx",1096,0x342db2ab)
+HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_1039_reloadValues,"PreferencesSubstate","reloadValues",0xc2328860,"PreferencesSubstate.reloadValues","OptionsState.hx",1039,0x342db2ab)
+HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_1097_unselectableCheck,"PreferencesSubstate","unselectableCheck",0x1b4089b4,"PreferencesSubstate.unselectableCheck","OptionsState.hx",1097,0x342db2ab)
 HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_664_boot,"PreferencesSubstate","boot",0xae9c6b77,"PreferencesSubstate.boot","OptionsState.hx",664,0x342db2ab)
 HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_665_boot,"PreferencesSubstate","boot",0xae9c6b77,"PreferencesSubstate.boot","OptionsState.hx",665,0x342db2ab)
 static const ::String _hx_array_data_bf26bf49_28[] = {
@@ -175,7 +175,7 @@ static const ::String _hx_array_data_bf26bf49_30[] = {
 };
 HX_LOCAL_STACK_FRAME(_hx_pos_641e954371eb7a1d_674_boot,"PreferencesSubstate","boot",0xae9c6b77,"PreferencesSubstate.boot","OptionsState.hx",674,0x342db2ab)
 static const ::String _hx_array_data_bf26bf49_32[] = {
-	HX_("GRAPHICS",cb,88,ed,6b),HX_("Low Quality",f3,10,75,e8),HX_("Anti-Aliasing",9d,02,6c,80),HX_("Persistent Cached Data",ff,eb,03,14),HX_("Framerate",6d,c5,1e,f0),HX_("GAMEPLAY",e6,92,2c,25),HX_("Downscroll",0f,4a,85,46),HX_("Sticky",49,21,cd,3f),HX_("Middlescroll",42,a5,d6,f5),HX_("Ghost Tapping",44,6c,9f,40),HX_("Note Delay",d5,70,f0,95),HX_("Note Splashes",83,c7,78,74),HX_("Hide HUD",59,3a,04,5d),HX_("Hide Song Length",93,89,0c,bf),HX_("Flashing Lights",0b,e4,0d,04),HX_("Camera Zooms",45,a6,9b,43),HX_("FPS Counter",85,ef,54,c9),
+	HX_("GRAPHICS",cb,88,ed,6b),HX_("Low Quality",f3,10,75,e8),HX_("Anti-Aliasing",9d,02,6c,80),HX_("Persistent Cached Data",ff,eb,03,14),HX_("Framerate",6d,c5,1e,f0),HX_("GAMEPLAY",e6,92,2c,25),HX_("Downscroll",0f,4a,85,46),HX_("Dami",39,7c,3c,2d),HX_("Middlescroll",42,a5,d6,f5),HX_("Ghost Tapping",44,6c,9f,40),HX_("Note Delay",d5,70,f0,95),HX_("Note Splashes",83,c7,78,74),HX_("Hide HUD",59,3a,04,5d),HX_("Hide Song Length",93,89,0c,bf),HX_("Flashing Lights",0b,e4,0d,04),HX_("Camera Zooms",45,a6,9b,43),HX_("FPS Counter",85,ef,54,c9),
 };
 
 void PreferencesSubstate_obj::__construct(){
@@ -396,6 +396,10 @@ HXLINE( 829)					goto _hx_goto_6;
 HXLINE( 868)					::ClientPrefs_obj::camZooms = !(::ClientPrefs_obj::camZooms);
 HXDLIN( 868)					goto _hx_goto_6;
             				}
+            				if (  (_hx_switch_0==HX_("Dami",39,7c,3c,2d)) ){
+HXLINE( 859)					::ClientPrefs_obj::dami = !(::ClientPrefs_obj::dami);
+HXDLIN( 859)					goto _hx_goto_6;
+            				}
             				if (  (_hx_switch_0==HX_("Downscroll",0f,4a,85,46)) ){
 HXLINE( 856)					::ClientPrefs_obj::downScroll = !(::ClientPrefs_obj::downScroll);
 HXDLIN( 856)					goto _hx_goto_6;
@@ -439,10 +443,6 @@ HXDLIN( 844)					goto _hx_goto_6;
 HXLINE( 874)					::ClientPrefs_obj::imagesPersist = !(::ClientPrefs_obj::imagesPersist);
 HXLINE( 875)					::flixel::graphics::FlxGraphic_obj::defaultPersist = ::ClientPrefs_obj::imagesPersist;
 HXLINE( 873)					goto _hx_goto_6;
-            				}
-            				if (  (_hx_switch_0==HX_("Sticky",49,21,cd,3f)) ){
-HXLINE( 859)					::ClientPrefs_obj::sticky = !(::ClientPrefs_obj::sticky);
-HXDLIN( 859)					goto _hx_goto_6;
             				}
             				if (  (_hx_switch_0==HX_("Swearing",d0,49,69,67)) ){
 HXLINE( 853)					::ClientPrefs_obj::cursing = !(::ClientPrefs_obj::cursing);
@@ -587,6 +587,10 @@ HXDLIN( 951)			goto _hx_goto_14;
 HXLINE( 969)			daText = HX_("If unchecked, the camera won't zoom in on a beat hit.",fd,78,13,6b);
 HXDLIN( 969)			goto _hx_goto_14;
             		}
+            		if (  (_hx_switch_0==HX_("Dami",39,7c,3c,2d)) ){
+HXLINE( 955)			daText = HX_("IT MAKES YOU INTO DAMIIIIII (warning will not play mid-song animations or anything like that)",43,84,41,5c);
+HXDLIN( 955)			goto _hx_goto_14;
+            		}
             		if (  (_hx_switch_0==HX_("Downscroll",0f,4a,85,46)) ){
 HXLINE( 953)			daText = HX_("If checked, notes go Down instead of Up, simple enough.",0d,a5,bc,fc);
 HXDLIN( 953)			goto _hx_goto_14;
@@ -638,10 +642,6 @@ HXDLIN( 965)			goto _hx_goto_14;
             		if (  (_hx_switch_0==HX_("Persistent Cached Data",ff,eb,03,14)) ){
 HXLINE( 949)			daText = HX_("If checked, images loaded will stay in memory\nuntil the game is closed, this increases memory usage,\nbut basically makes reloading times instant.",98,42,eb,6a);
 HXDLIN( 949)			goto _hx_goto_14;
-            		}
-            		if (  (_hx_switch_0==HX_("Sticky",49,21,cd,3f)) ){
-HXLINE( 955)			daText = HX_("Makes you become sticky from fnf (warning will not play mid-song animations or anything like that)",a4,37,6b,8f);
-HXDLIN( 955)			goto _hx_goto_14;
             		}
             		if (  (_hx_switch_0==HX_("Swearing",d0,49,69,67)) ){
 HXLINE( 961)			daText = HX_("If unchecked, your mom won't be angry at you.",c0,b5,09,e3);
@@ -715,11 +715,11 @@ HXLINE(1019)				this->characterLayer->clear();
 HXLINE(1020)				this->showCharacter = null();
             			}
             			else {
-HXLINE(1023)				if ((::PreferencesSubstate_obj::options->__get(::PreferencesSubstate_obj::curSelected) == HX_("Sticky",49,21,cd,3f))) {
+HXLINE(1023)				if ((::PreferencesSubstate_obj::options->__get(::PreferencesSubstate_obj::curSelected) == HX_("Dami",39,7c,3c,2d))) {
 HXLINE(1024)					if (::hx::IsNull( this->showCharacter )) {
-HXLINE(1025)						this->showCharacter =  ::Character_obj::__alloc( HX_CTX ,( (Float)(840) ),( (Float)(170) ),HX_("sticky",29,ad,38,0b),true);
+HXLINE(1025)						this->showCharacter =  ::Character_obj::__alloc( HX_CTX ,( (Float)(840) ),( (Float)(170) ),HX_("dami",19,50,63,42),true);
 HXLINE(1026)						 ::Character _hx_tmp = this->showCharacter;
-HXDLIN(1026)						_hx_tmp->setGraphicSize(::Std_obj::_hx_int((this->showCharacter->get_width() * ((Float)1.9))),null());
+HXDLIN(1026)						_hx_tmp->setGraphicSize(::Std_obj::_hx_int((this->showCharacter->get_width() * ((Float)0.9))),null());
 HXLINE(1027)						this->showCharacter->updateHitbox();
 HXLINE(1028)						this->showCharacter->dance();
 HXLINE(1029)						this->characterLayer->add(this->showCharacter).StaticCast<  ::Character >();
@@ -733,113 +733,113 @@ HXLINE(1033)						this->showCharacter = null();
             				}
             			}
             		}
-HXLINE(1035)		 ::flixel::_hx_system::frontEnds::SoundFrontEnd _hx_tmp = ::flixel::FlxG_obj::sound;
-HXDLIN(1035)		_hx_tmp->play(::Paths_obj::sound(HX_("scrollMenu",4c,d4,18,06),null()),null(),null(),null(),null(),null());
+HXLINE(1036)		 ::flixel::_hx_system::frontEnds::SoundFrontEnd _hx_tmp = ::flixel::FlxG_obj::sound;
+HXDLIN(1036)		_hx_tmp->play(::Paths_obj::sound(HX_("scrollMenu",4c,d4,18,06),null()),null(),null(),null(),null(),null());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(PreferencesSubstate_obj,changeSelection,(void))
 
 void PreferencesSubstate_obj::reloadValues(){
-            	HX_STACKFRAME(&_hx_pos_641e954371eb7a1d_1038_reloadValues)
-HXLINE(1039)		{
-HXLINE(1039)			int _g = 0;
-HXDLIN(1039)			int _g1 = this->checkboxArray->length;
-HXDLIN(1039)			while((_g < _g1)){
-HXLINE(1039)				_g = (_g + 1);
-HXDLIN(1039)				int i = (_g - 1);
-HXLINE(1040)				 ::CheckboxThingie checkbox = this->checkboxArray->__get(i).StaticCast<  ::CheckboxThingie >();
-HXLINE(1041)				if (::hx::IsNotNull( checkbox )) {
-HXLINE(1042)					bool daValue = false;
-HXLINE(1043)					::String _hx_switch_0 = ::PreferencesSubstate_obj::options->__get(this->checkboxNumber->__get(i));
+            	HX_STACKFRAME(&_hx_pos_641e954371eb7a1d_1039_reloadValues)
+HXLINE(1040)		{
+HXLINE(1040)			int _g = 0;
+HXDLIN(1040)			int _g1 = this->checkboxArray->length;
+HXDLIN(1040)			while((_g < _g1)){
+HXLINE(1040)				_g = (_g + 1);
+HXDLIN(1040)				int i = (_g - 1);
+HXLINE(1041)				 ::CheckboxThingie checkbox = this->checkboxArray->__get(i).StaticCast<  ::CheckboxThingie >();
+HXLINE(1042)				if (::hx::IsNotNull( checkbox )) {
+HXLINE(1043)					bool daValue = false;
+HXLINE(1044)					::String _hx_switch_0 = ::PreferencesSubstate_obj::options->__get(this->checkboxNumber->__get(i));
             					if (  (_hx_switch_0==HX_("Anti-Aliasing",9d,02,6c,80)) ){
-HXLINE(1049)						daValue = ::ClientPrefs_obj::globalAntialiasing;
-HXDLIN(1049)						goto _hx_goto_20;
+HXLINE(1050)						daValue = ::ClientPrefs_obj::globalAntialiasing;
+HXDLIN(1050)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Camera Zooms",45,a6,9b,43)) ){
-HXLINE(1067)						daValue = ::ClientPrefs_obj::camZooms;
-HXDLIN(1067)						goto _hx_goto_20;
+HXLINE(1068)						daValue = ::ClientPrefs_obj::camZooms;
+HXDLIN(1068)						goto _hx_goto_20;
+            					}
+            					if (  (_hx_switch_0==HX_("Dami",39,7c,3c,2d)) ){
+HXLINE(1058)						daValue = ::ClientPrefs_obj::dami;
+HXDLIN(1058)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Downscroll",0f,4a,85,46)) ){
-HXLINE(1055)						daValue = ::ClientPrefs_obj::downScroll;
-HXDLIN(1055)						goto _hx_goto_20;
+HXLINE(1056)						daValue = ::ClientPrefs_obj::downScroll;
+HXDLIN(1056)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("FPS Counter",85,ef,54,c9)) ){
-HXLINE(1045)						daValue = ::ClientPrefs_obj::showFPS;
-HXDLIN(1045)						goto _hx_goto_20;
+HXLINE(1046)						daValue = ::ClientPrefs_obj::showFPS;
+HXDLIN(1046)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Flashing Lights",0b,e4,0d,04)) ){
-HXLINE(1053)						daValue = ::ClientPrefs_obj::flashing;
-HXDLIN(1053)						goto _hx_goto_20;
+HXLINE(1054)						daValue = ::ClientPrefs_obj::flashing;
+HXDLIN(1054)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Ghost Tapping",44,6c,9f,40)) ){
-HXLINE(1061)						daValue = ::ClientPrefs_obj::ghostTapping;
-HXDLIN(1061)						goto _hx_goto_20;
+HXLINE(1062)						daValue = ::ClientPrefs_obj::ghostTapping;
+HXDLIN(1062)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Hide HUD",59,3a,04,5d)) ){
-HXLINE(1069)						daValue = ::ClientPrefs_obj::hideHud;
-HXDLIN(1069)						goto _hx_goto_20;
+HXLINE(1070)						daValue = ::ClientPrefs_obj::hideHud;
+HXDLIN(1070)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Hide Song Length",93,89,0c,bf)) ){
-HXLINE(1073)						daValue = ::ClientPrefs_obj::hideTime;
-HXDLIN(1073)						goto _hx_goto_20;
+HXLINE(1074)						daValue = ::ClientPrefs_obj::hideTime;
+HXDLIN(1074)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Low Quality",f3,10,75,e8)) ){
-HXLINE(1047)						daValue = ::ClientPrefs_obj::lowQuality;
-HXDLIN(1047)						goto _hx_goto_20;
+HXLINE(1048)						daValue = ::ClientPrefs_obj::lowQuality;
+HXDLIN(1048)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Middlescroll",42,a5,d6,f5)) ){
-HXLINE(1059)						daValue = ::ClientPrefs_obj::middleScroll;
-HXDLIN(1059)						goto _hx_goto_20;
+HXLINE(1060)						daValue = ::ClientPrefs_obj::middleScroll;
+HXDLIN(1060)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Note Splashes",83,c7,78,74)) ){
-HXLINE(1051)						daValue = ::ClientPrefs_obj::noteSplashes;
-HXDLIN(1051)						goto _hx_goto_20;
+HXLINE(1052)						daValue = ::ClientPrefs_obj::noteSplashes;
+HXDLIN(1052)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Persistent Cached Data",ff,eb,03,14)) ){
-HXLINE(1071)						daValue = ::ClientPrefs_obj::imagesPersist;
-HXDLIN(1071)						goto _hx_goto_20;
-            					}
-            					if (  (_hx_switch_0==HX_("Sticky",49,21,cd,3f)) ){
-HXLINE(1057)						daValue = ::ClientPrefs_obj::sticky;
-HXDLIN(1057)						goto _hx_goto_20;
+HXLINE(1072)						daValue = ::ClientPrefs_obj::imagesPersist;
+HXDLIN(1072)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Swearing",d0,49,69,67)) ){
-HXLINE(1063)						daValue = ::ClientPrefs_obj::cursing;
-HXDLIN(1063)						goto _hx_goto_20;
+HXLINE(1064)						daValue = ::ClientPrefs_obj::cursing;
+HXDLIN(1064)						goto _hx_goto_20;
             					}
             					if (  (_hx_switch_0==HX_("Violence",7b,1a,3a,19)) ){
-HXLINE(1065)						daValue = ::ClientPrefs_obj::violence;
-HXDLIN(1065)						goto _hx_goto_20;
+HXLINE(1066)						daValue = ::ClientPrefs_obj::violence;
+HXDLIN(1066)						goto _hx_goto_20;
             					}
             					_hx_goto_20:;
-HXLINE(1075)					checkbox->set_daValue(daValue);
+HXLINE(1076)					checkbox->set_daValue(daValue);
             				}
             			}
             		}
-HXLINE(1078)		{
-HXLINE(1078)			int _g2 = 0;
-HXDLIN(1078)			int _g3 = this->grpTexts->members->get_length();
-HXDLIN(1078)			while((_g2 < _g3)){
-HXLINE(1078)				_g2 = (_g2 + 1);
-HXDLIN(1078)				int i = (_g2 - 1);
-HXLINE(1079)				 ::AttachedText text = Dynamic( this->grpTexts->members->__get(i)).StaticCast<  ::AttachedText >();
-HXLINE(1080)				if (::hx::IsNotNull( text )) {
-HXLINE(1081)					::String daText = HX_("",00,00,00,00);
-HXLINE(1082)					::String _hx_switch_1 = ::PreferencesSubstate_obj::options->__get(this->textNumber->__get(i));
+HXLINE(1079)		{
+HXLINE(1079)			int _g2 = 0;
+HXDLIN(1079)			int _g3 = this->grpTexts->members->get_length();
+HXDLIN(1079)			while((_g2 < _g3)){
+HXLINE(1079)				_g2 = (_g2 + 1);
+HXDLIN(1079)				int i = (_g2 - 1);
+HXLINE(1080)				 ::AttachedText text = Dynamic( this->grpTexts->members->__get(i)).StaticCast<  ::AttachedText >();
+HXLINE(1081)				if (::hx::IsNotNull( text )) {
+HXLINE(1082)					::String daText = HX_("",00,00,00,00);
+HXLINE(1083)					::String _hx_switch_1 = ::PreferencesSubstate_obj::options->__get(this->textNumber->__get(i));
             					if (  (_hx_switch_1==HX_("Framerate",6d,c5,1e,f0)) ){
-HXLINE(1084)						daText = (HX_("",00,00,00,00) + ::ClientPrefs_obj::framerate);
-HXDLIN(1084)						goto _hx_goto_22;
+HXLINE(1085)						daText = (HX_("",00,00,00,00) + ::ClientPrefs_obj::framerate);
+HXDLIN(1085)						goto _hx_goto_22;
             					}
             					if (  (_hx_switch_1==HX_("Note Delay",d5,70,f0,95)) ){
-HXLINE(1086)						daText = (::ClientPrefs_obj::noteOffset + HX_("ms",66,5f,00,00));
-HXDLIN(1086)						goto _hx_goto_22;
+HXLINE(1087)						daText = (::ClientPrefs_obj::noteOffset + HX_("ms",66,5f,00,00));
+HXDLIN(1087)						goto _hx_goto_22;
             					}
             					_hx_goto_22:;
-HXLINE(1088)					 ::flixel::FlxSprite lastTracker = text->sprTracker;
-HXLINE(1089)					text->sprTracker = null();
-HXLINE(1090)					text->changeText(daText,null());
-HXLINE(1091)					text->sprTracker = lastTracker;
+HXLINE(1089)					 ::flixel::FlxSprite lastTracker = text->sprTracker;
+HXLINE(1090)					text->sprTracker = null();
+HXLINE(1091)					text->changeText(daText,null());
+HXLINE(1092)					text->sprTracker = lastTracker;
             				}
             			}
             		}
@@ -849,19 +849,19 @@ HXLINE(1091)					text->sprTracker = lastTracker;
 HX_DEFINE_DYNAMIC_FUNC0(PreferencesSubstate_obj,reloadValues,(void))
 
 bool PreferencesSubstate_obj::unselectableCheck(int num){
-            	HX_STACKFRAME(&_hx_pos_641e954371eb7a1d_1096_unselectableCheck)
-HXLINE(1097)		{
-HXLINE(1097)			int _g = 0;
-HXDLIN(1097)			int _g1 = ::PreferencesSubstate_obj::unselectableOptions->length;
-HXDLIN(1097)			while((_g < _g1)){
-HXLINE(1097)				_g = (_g + 1);
-HXDLIN(1097)				int i = (_g - 1);
-HXLINE(1098)				if ((::PreferencesSubstate_obj::options->__get(num) == ::PreferencesSubstate_obj::unselectableOptions->__get(i))) {
-HXLINE(1099)					return true;
+            	HX_STACKFRAME(&_hx_pos_641e954371eb7a1d_1097_unselectableCheck)
+HXLINE(1098)		{
+HXLINE(1098)			int _g = 0;
+HXDLIN(1098)			int _g1 = ::PreferencesSubstate_obj::unselectableOptions->length;
+HXDLIN(1098)			while((_g < _g1)){
+HXLINE(1098)				_g = (_g + 1);
+HXDLIN(1098)				int i = (_g - 1);
+HXLINE(1099)				if ((::PreferencesSubstate_obj::options->__get(num) == ::PreferencesSubstate_obj::unselectableOptions->__get(i))) {
+HXLINE(1100)					return true;
             				}
             			}
             		}
-HXLINE(1102)		return (::PreferencesSubstate_obj::options->__get(num) == HX_("",00,00,00,00));
+HXLINE(1103)		return (::PreferencesSubstate_obj::options->__get(num) == HX_("",00,00,00,00));
             	}
 
 

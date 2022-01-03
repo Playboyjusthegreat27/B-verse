@@ -295,6 +295,24 @@ class PlayState extends MusicBeatState
 			chaos.setGraphicSize(Std.int(chaos.width * 1.6));
 			add(chaos); 
 
+			case 'ugh': //UGH!?
+			defaultCamZoom = 0.8;
+			var skytank:BGSprite = new BGSprite('tankman/tankSky', -600, -600, 0.9, 0.9);
+			skytank.setGraphicSize(Std.int(skytank.width * 1.6));
+			add(skytank); 
+
+			var mountainstank:BGSprite = new BGSprite('tankman/tankMountains', -600, -600, 0.9, 0.9);
+			mountainstank.setGraphicSize(Std.int(mountainstank.width * 1.6));
+			add(mountainstank); 
+
+			var ruinstank:BGSprite = new BGSprite('tankman/tankRuins', -600, -600, 0.9, 0.9);
+			ruinstank.setGraphicSize(Std.int(ruinstank.width * 1.6));
+			add(ruinstank); 
+
+			var groundtank:BGSprite = new BGSprite('tankman/tankGround', -600, -600, 0.9, 0.9);
+			groundtank.setGraphicSize(Std.int(groundtank.width * 1.6));
+			add(groundtank); 
+
 			case 'spookeez':
                         defaultCamZoom = 0.7;
                         curStage = 'spooky';
@@ -709,16 +727,16 @@ class PlayState extends MusicBeatState
 		dad.y += dad.positionArray[1];
 		dadGroup.add(dad);
 
-		if (ClientPrefs.sticky)
+		if (ClientPrefs.dami)
 			{
 				{
-					boyfriend = new Boyfriend(BF_X, BF_Y, 'sticky');
+					boyfriend = new Boyfriend(BF_X, BF_Y, 'dami');
 					boyfriend.x += boyfriend.positionArray[0];
 					boyfriend.y += boyfriend.positionArray[1];
 					boyfriendGroup.add(boyfriend);
 				}
 			}
-			else if (!ClientPrefs.sticky)
+			else if (!ClientPrefs.dami)
 			{
 				boyfriend = new Boyfriend(BF_X, BF_Y, SONG.player1);
 				boyfriend.x += boyfriend.positionArray[0];
@@ -2643,7 +2661,7 @@ class PlayState extends MusicBeatState
 	
 					switch(charType) {
 						case 0:
-							if (!ClientPrefs.sticky)
+							if (!ClientPrefs.dami)
 							{
 								if(boyfriend.curCharacter != value2) {
 									if(!boyfriendMap.exists(value2)) {

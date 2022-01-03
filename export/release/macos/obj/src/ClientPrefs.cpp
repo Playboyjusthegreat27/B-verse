@@ -122,7 +122,7 @@ bool ClientPrefs_obj::_hx_isInstanceOf(int inClassId) {
 
 bool ClientPrefs_obj::downScroll;
 
-bool ClientPrefs_obj::sticky;
+bool ClientPrefs_obj::dami;
 
 bool ClientPrefs_obj::middleScroll;
 
@@ -165,7 +165,7 @@ bool ClientPrefs_obj::hideTime;
 void ClientPrefs_obj::saveSettings(){
             	HX_GC_STACKFRAME(&_hx_pos_1453641688f31b8d_66_saveSettings)
 HXLINE(  67)		::flixel::FlxG_obj::save->data->__SetField(HX_("downScroll",0f,ba,68,84),::ClientPrefs_obj::downScroll,::hx::paccDynamic);
-HXLINE(  68)		::flixel::FlxG_obj::save->data->__SetField(HX_("sticky",29,ad,38,0b),::ClientPrefs_obj::sticky,::hx::paccDynamic);
+HXLINE(  68)		::flixel::FlxG_obj::save->data->__SetField(HX_("dami",19,50,63,42),::ClientPrefs_obj::dami,::hx::paccDynamic);
 HXLINE(  69)		::flixel::FlxG_obj::save->data->__SetField(HX_("middleScroll",42,cd,58,62),::ClientPrefs_obj::middleScroll,::hx::paccDynamic);
 HXLINE(  70)		::flixel::FlxG_obj::save->data->__SetField(HX_("showFPS",ec,0a,9a,7b),::ClientPrefs_obj::showFPS,::hx::paccDynamic);
 HXLINE(  71)		::flixel::FlxG_obj::save->data->__SetField(HX_("flashing",32,85,e8,99),::ClientPrefs_obj::flashing,::hx::paccDynamic);
@@ -211,8 +211,8 @@ void ClientPrefs_obj::loadPrefs(){
 HXLINE( 104)		if (::hx::IsNotNull( ::flixel::FlxG_obj::save->data->__Field(HX_("downScroll",0f,ba,68,84),::hx::paccDynamic) )) {
 HXLINE( 105)			::ClientPrefs_obj::downScroll = ( (bool)(::flixel::FlxG_obj::save->data->__Field(HX_("downScroll",0f,ba,68,84),::hx::paccDynamic)) );
             		}
-HXLINE( 107)		if (::hx::IsNotNull( ::flixel::FlxG_obj::save->data->__Field(HX_("sticky",29,ad,38,0b),::hx::paccDynamic) )) {
-HXLINE( 108)			::ClientPrefs_obj::sticky = ( (bool)(::flixel::FlxG_obj::save->data->__Field(HX_("sticky",29,ad,38,0b),::hx::paccDynamic)) );
+HXLINE( 107)		if (::hx::IsNotNull( ::flixel::FlxG_obj::save->data->__Field(HX_("dami",19,50,63,42),::hx::paccDynamic) )) {
+HXLINE( 108)			::ClientPrefs_obj::dami = ( (bool)(::flixel::FlxG_obj::save->data->__Field(HX_("dami",19,50,63,42),::hx::paccDynamic)) );
             		}
 HXLINE( 110)		if (::hx::IsNotNull( ::flixel::FlxG_obj::save->data->__Field(HX_("middleScroll",42,cd,58,62),::hx::paccDynamic) )) {
 HXLINE( 111)			::ClientPrefs_obj::middleScroll = ( (bool)(::flixel::FlxG_obj::save->data->__Field(HX_("middleScroll",42,cd,58,62),::hx::paccDynamic)) );
@@ -355,8 +355,8 @@ ClientPrefs_obj::ClientPrefs_obj()
 bool ClientPrefs_obj::__GetStatic(const ::String &inName, Dynamic &outValue, ::hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
-	case 6:
-		if (HX_FIELD_EQ(inName,"sticky") ) { outValue = ( sticky ); return true; }
+	case 4:
+		if (HX_FIELD_EQ(inName,"dami") ) { outValue = ( dami ); return true; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"showFPS") ) { outValue = ( showFPS ); return true; }
@@ -407,8 +407,8 @@ bool ClientPrefs_obj::__GetStatic(const ::String &inName, Dynamic &outValue, ::h
 bool ClientPrefs_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,::hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
-	case 6:
-		if (HX_FIELD_EQ(inName,"sticky") ) { sticky=ioValue.Cast< bool >(); return true; }
+	case 4:
+		if (HX_FIELD_EQ(inName,"dami") ) { dami=ioValue.Cast< bool >(); return true; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"showFPS") ) { showFPS=ioValue.Cast< bool >(); return true; }
@@ -453,7 +453,7 @@ bool ClientPrefs_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,::hx::
 static ::hx::StorageInfo *ClientPrefs_obj_sMemberStorageInfo = 0;
 static ::hx::StaticInfo ClientPrefs_obj_sStaticStorageInfo[] = {
 	{::hx::fsBool,(void *) &ClientPrefs_obj::downScroll,HX_("downScroll",0f,ba,68,84)},
-	{::hx::fsBool,(void *) &ClientPrefs_obj::sticky,HX_("sticky",29,ad,38,0b)},
+	{::hx::fsBool,(void *) &ClientPrefs_obj::dami,HX_("dami",19,50,63,42)},
 	{::hx::fsBool,(void *) &ClientPrefs_obj::middleScroll,HX_("middleScroll",42,cd,58,62)},
 	{::hx::fsBool,(void *) &ClientPrefs_obj::showFPS,HX_("showFPS",ec,0a,9a,7b)},
 	{::hx::fsBool,(void *) &ClientPrefs_obj::flashing,HX_("flashing",32,85,e8,99)},
@@ -479,7 +479,7 @@ static ::hx::StaticInfo ClientPrefs_obj_sStaticStorageInfo[] = {
 
 static void ClientPrefs_obj_sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(ClientPrefs_obj::downScroll,"downScroll");
-	HX_MARK_MEMBER_NAME(ClientPrefs_obj::sticky,"sticky");
+	HX_MARK_MEMBER_NAME(ClientPrefs_obj::dami,"dami");
 	HX_MARK_MEMBER_NAME(ClientPrefs_obj::middleScroll,"middleScroll");
 	HX_MARK_MEMBER_NAME(ClientPrefs_obj::showFPS,"showFPS");
 	HX_MARK_MEMBER_NAME(ClientPrefs_obj::flashing,"flashing");
@@ -504,7 +504,7 @@ static void ClientPrefs_obj_sMarkStatics(HX_MARK_PARAMS) {
 #ifdef HXCPP_VISIT_ALLOCS
 static void ClientPrefs_obj_sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(ClientPrefs_obj::downScroll,"downScroll");
-	HX_VISIT_MEMBER_NAME(ClientPrefs_obj::sticky,"sticky");
+	HX_VISIT_MEMBER_NAME(ClientPrefs_obj::dami,"dami");
 	HX_VISIT_MEMBER_NAME(ClientPrefs_obj::middleScroll,"middleScroll");
 	HX_VISIT_MEMBER_NAME(ClientPrefs_obj::showFPS,"showFPS");
 	HX_VISIT_MEMBER_NAME(ClientPrefs_obj::flashing,"flashing");
@@ -532,7 +532,7 @@ static void ClientPrefs_obj_sVisitStatics(HX_VISIT_PARAMS) {
 
 static ::String ClientPrefs_obj_sStaticFields[] = {
 	HX_("downScroll",0f,ba,68,84),
-	HX_("sticky",29,ad,38,0b),
+	HX_("dami",19,50,63,42),
 	HX_("middleScroll",42,cd,58,62),
 	HX_("showFPS",ec,0a,9a,7b),
 	HX_("flashing",32,85,e8,99),
@@ -595,7 +595,7 @@ HXDLIN(  11)		downScroll = false;
             	}
 {
             	HX_STACKFRAME(&_hx_pos_1453641688f31b8d_12_boot)
-HXDLIN(  12)		sticky = false;
+HXDLIN(  12)		dami = false;
             	}
 {
             	HX_STACKFRAME(&_hx_pos_1453641688f31b8d_13_boot)

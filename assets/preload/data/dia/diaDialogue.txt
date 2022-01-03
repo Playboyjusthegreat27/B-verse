@@ -1,8 +1,0 @@
-dad:left bf:right
-:0:talkIdle:0.05:normal:So you F my girl 
-:1:talk:0.05:normal: Nah
-:0:angry:0.05:angry:BRO WHY THE FUC- NOT
-:1:talk:0.05:normal:because...
-:1:talk:0.05:normal:I don't date bad bitch's like her
-:0:unamused:0.05:normal:wha-....
-:0:talkIdle:0.05:angry:MY NIG-

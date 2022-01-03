@@ -681,7 +681,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 		#end
 		'GAMEPLAY',
 		'Downscroll',
-		'Sticky',
+		'Dami',
 		'Middlescroll',
 		'Ghost Tapping',
 		'Note Delay',
@@ -855,8 +855,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 					case 'Downscroll':
 						ClientPrefs.downScroll = !ClientPrefs.downScroll;
 
-						case 'Sticky':
-							ClientPrefs.sticky = !ClientPrefs.sticky;
+						case 'Dami':
+							ClientPrefs.dami = !ClientPrefs.dami;
 
 					case 'Middlescroll':
 						ClientPrefs.middleScroll = !ClientPrefs.middleScroll;
@@ -951,8 +951,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 				daText = "If unchecked, disables anti-aliasing, increases performance\nat the cost of the graphics not looking as smooth.";
 			case 'Downscroll':
 				daText = "If checked, notes go Down instead of Up, simple enough.";
-				case 'Sticky':
-					daText = "Makes you become sticky from fnf (warning will not play mid-song animations or anything like that)";
+				case 'Dami':
+					daText = "IT MAKES YOU INTO DAMIIIIII (warning will not play mid-song animations or anything like that)";
 			case 'Middlescroll':
 				daText = "If checked, hides Opponent's notes and your notes get centered.";
 			case 'Ghost Tapping':
@@ -1020,10 +1020,10 @@ class PreferencesSubstate extends MusicBeatSubstate
 			showCharacter = null;
 		}
 
-	else if(options[curSelected] == 'Sticky') {
+	else if(options[curSelected] == 'Dami') {
 		if(showCharacter == null) {
-			showCharacter = new Character(840, 170, 'sticky', true);
-			showCharacter.setGraphicSize(Std.int(showCharacter.width * 1.9));
+			showCharacter = new Character(840, 170, 'dami', true);
+			showCharacter.setGraphicSize(Std.int(showCharacter.width * 0.9));
 			showCharacter.updateHitbox();
 			showCharacter.dance();
 			characterLayer.add(showCharacter);
@@ -1032,6 +1032,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 		characterLayer.clear();
 		showCharacter = null;
 	}
+
 	FlxG.sound.play(Paths.sound('scrollMenu'));
 }
 
@@ -1053,8 +1054,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 						daValue = ClientPrefs.flashing;
 					case 'Downscroll':
 						daValue = ClientPrefs.downScroll;
-					case 'Sticky':
-							daValue = ClientPrefs.sticky;
+					case 'Dami':
+							daValue = ClientPrefs.dami;
 					case 'Middlescroll':
 						daValue = ClientPrefs.middleScroll;
 					case 'Ghost Tapping':

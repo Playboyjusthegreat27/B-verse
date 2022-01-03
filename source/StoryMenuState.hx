@@ -50,13 +50,13 @@ class StoryMenuState extends MusicBeatState
 
 	//The week's name, displayed on top-right
 	var weekNames:Array<String> = [
-		"Day 1: Tutorial",
-		"After Tutorial: Daddy O five",
-		"Day 2: Bootleg spook bois",
-		"Day 3: Bf is not gay o k a y",
-		"Day 4: The mum",
-		"Day 4: Let's get this show started!",
-		"Day 5: It's not week 7, it's a gameboy"
+		"Day 1: cheering up",
+		"Day 1: (part 2) audition",
+		"Day 2: the line cutters",
+		"Day 3: a shocking introduction",
+		"Day 4: Wait is that a pirate?",
+		"Day 5: lucid dreamer",
+		"Day 6: the plan"
 	];
 
 	//Background asset name, the background files are stored on assets/preload/menubackgrounds/
