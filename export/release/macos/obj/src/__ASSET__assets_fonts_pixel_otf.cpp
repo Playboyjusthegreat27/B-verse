@@ -14,7 +14,7 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_3799088c14a27966_307_new,"__ASSET__assets_fonts_pixel_otf","new",0x3643a2f3,"__ASSET__assets_fonts_pixel_otf.new","lime/_internal/macros/AssetsMacro.hx",307,0xc651f030)
-HX_LOCAL_STACK_FRAME(_hx_pos_ea3e7ad2941b46d1_953_boot,"__ASSET__assets_fonts_pixel_otf","boot",0x3d03f23f,"__ASSET__assets_fonts_pixel_otf.boot","ManifestResources.hx",953,0xf77aa668)
+HX_LOCAL_STACK_FRAME(_hx_pos_ea3e7ad2941b46d1_957_boot,"__ASSET__assets_fonts_pixel_otf","boot",0x3d03f23f,"__ASSET__assets_fonts_pixel_otf.boot","ManifestResources.hx",957,0xf77aa668)
 
 void __ASSET__assets_fonts_pixel_otf_obj::__construct(){
             	HX_STACKFRAME(&_hx_pos_3799088c14a27966_307_new)
@@ -135,8 +135,8 @@ void __ASSET__assets_fonts_pixel_otf_obj::__register()
 void __ASSET__assets_fonts_pixel_otf_obj::__boot()
 {
 {
-            	HX_STACKFRAME(&_hx_pos_ea3e7ad2941b46d1_953_boot)
-HXDLIN( 953)		resourceName = HX_("LIME_font___ASSET__assets_fonts_pixel_otf",7b,14,69,8d);
+            	HX_STACKFRAME(&_hx_pos_ea3e7ad2941b46d1_957_boot)
+HXDLIN( 957)		resourceName = HX_("LIME_font___ASSET__assets_fonts_pixel_otf",7b,14,69,8d);
             	}
 }
 
