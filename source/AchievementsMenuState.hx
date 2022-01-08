@@ -82,7 +82,7 @@ class AchievementsMenuState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		if (FlxG.keys.pressed.ESCAPE) {
+		if (controls.BACK) {
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new MainMenuState());
 		}

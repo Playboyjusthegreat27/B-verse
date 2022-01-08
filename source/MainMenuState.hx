@@ -19,27 +19,27 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import lime.app.Application;
 import Achievements;
+import editors.MasterEditorMenu;
 
 using StringTools;
 
 class MainMenuState extends MusicBeatState
 {
-	public static var psychEngineVersion:String = '0.4'; //This is also used for Discord RPC
+	public static var psychEngineVersion:String = '0.4.2'; //This is also used for Discord RPC
 	public static var curSelected:Int = 0;
-
-	var scoreText:FlxText;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
-// gonna check what you have
+	// gonna check what you have
 	var NHroom:FlxSprite;
     var isNHroom:Bool = false;
 
 	var SwingLogo:FlxSprite;
     var isSwingLogo:Bool = false;
-	
-	var optionShit:Array<String> = ['story_mode', 'freeplay', #if ACHIEVEMENTS_ALLOWED 'awards', #end 'credits', #if !switch 'donate', #end 'options',];
+
+
+	var optionShit:Array<String> = ['story_mode', 'freeplay', #if ACHIEVEMENTS_ALLOWED 'awards', #end 'credits', #if !switch 'donate', #end 'options'];
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -47,7 +47,6 @@ class MainMenuState extends MusicBeatState
 	var camFollowPos:FlxObject;
 
 	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Main_Checker'), 0.2, 0.2, true, true);
-
 
 	override function create()
 	{
@@ -77,59 +76,60 @@ class MainMenuState extends MusicBeatState
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		//add(bg);
-		 weekSprites =  new FlxSprite(0, -45).loadGraphic(Paths.image('StorySelectTest'), true, 1920, 1080);
-         weekSprites.animation.add('week0', [0], 0, false);
-         weekSprites.animation.add('week1', [1], 0, false);
-         weekSprites.animation.add('week2', [2], 0, false);
-		 weekSprites.animation.add('week3', [3], 0, false);
-		 weekSprites.animation.add('week4', [4], 0, false);
-		 weekSprites.animation.add('week5', [5], 0, false);
-		 weekSprites.animation.add('week6', [6], 0, false);
-		 weekSprites.animation.add('week7', [7], 0, false);
+		weekSprites =  new FlxSprite(0, -45).loadGraphic(Paths.image('StorySelectTest'), true, 1920, 1080);
+		weekSprites.animation.add('week0', [0], 0, false);
+		weekSprites.animation.add('week1', [1], 0, false);
+		weekSprites.animation.add('week2', [2], 0, false);
+		weekSprites.animation.add('week3', [3], 0, false);
+		weekSprites.animation.add('week4', [4], 0, false);
+		weekSprites.animation.add('week5', [5], 0, false);
+		weekSprites.animation.add('week6', [6], 0, false);
+		weekSprites.animation.add('week7', [7], 0, false);
 
-         weekSprites.antialiasing = true;
-         weekSprites.updateHitbox();
-		 weekSprites.scrollFactor.set(0, yScroll);
-		 weekSprites.screenCenter(X);
-         add (weekSprites);
+		weekSprites.antialiasing = true;
+		weekSprites.updateHitbox();
+		weekSprites.scrollFactor.set(0, yScroll);
+		weekSprites.screenCenter(X);
+		add (weekSprites);
 
-		add(checker);
-		checker.scrollFactor.set(0, 0.07);
+	   add(checker);
+	   checker.scrollFactor.set(0, 0.07);
 
-		var Bverse:BGSprite = new BGSprite('B', 710, 40, 1.3, 1.3);
-		Bverse.setGraphicSize(Std.int(Bverse.width * 0.5));
-		Bverse.scrollFactor.set(0, 0);
-		Bverse.updateHitbox();
-		//add(Bverse);
 
-		var MainM:BGSprite = new BGSprite('MainM', -10, 590, 1.3, 1.3);
-		MainM.setGraphicSize(Std.int(MainM.width * 0.6));
-		MainM.scrollFactor.set(0, 0);
-		MainM.updateHitbox();
-		//add(MainM);
+	   var Bverse:BGSprite = new BGSprite('B', 710, 40, 1.3, 1.3);
+	   Bverse.setGraphicSize(Std.int(Bverse.width * 0.5));
+	   Bverse.scrollFactor.set(0, 0);
+	   Bverse.updateHitbox();
+	   //add(Bverse);
 
-		var spaceTex = Paths.getSparrowAtlas('GF_assets');
+	   var MainM:BGSprite = new BGSprite('MainM', -10, 590, 1.3, 1.3);
+	   MainM.setGraphicSize(Std.int(MainM.width * 0.6));
+	   MainM.scrollFactor.set(0, 0);
+	   MainM.updateHitbox();
+	   //add(MainM);
 
-		NHroom = new FlxSprite( 750, -20);
-		NHroom.frames = spaceTex;
-		NHroom.animation.addByPrefix('space', 'GF Dancing Beat', 24, true);
-		NHroom.animation.play('space');
-		NHroom.setGraphicSize(Std.int(NHroom.width * 0.5));
-		NHroom.scrollFactor.set(0, 0);
-		NHroom.antialiasing = true;
-		//add(NHroom);
+	   var spaceTex = Paths.getSparrowAtlas('GF_assets');
 
-		var spaceTex = Paths.getSparrowAtlas('SwingL');
+	   NHroom = new FlxSprite( 750, -20);
+	   NHroom.frames = spaceTex;
+	   NHroom.animation.addByPrefix('space', 'GF Dancing Beat', 24, true);
+	   NHroom.animation.play('space');
+	   NHroom.setGraphicSize(Std.int(NHroom.width * 0.5));
+	   NHroom.scrollFactor.set(0, 0);
+	   NHroom.antialiasing = true;
+	   //add(NHroom);
 
-		SwingLogo = new FlxSprite( -1080, -980);
-		SwingLogo.frames = spaceTex;
-		SwingLogo.animation.addByPrefix('Swing', 'Swing logo', 24, true);
-		SwingLogo.animation.play('Swing');
-		SwingLogo.setGraphicSize(Std.int(SwingLogo.width * 0.10));
-		SwingLogo.scrollFactor.set(0, 0);
-		SwingLogo.antialiasing = true;
-		//add(SwingLogo);
-		
+	   var spaceTex = Paths.getSparrowAtlas('SwingL');
+
+	   SwingLogo = new FlxSprite( -1080, -980);
+	   SwingLogo.frames = spaceTex;
+	   SwingLogo.animation.addByPrefix('Swing', 'Swing logo', 24, true);
+	   SwingLogo.animation.play('Swing');
+	   SwingLogo.setGraphicSize(Std.int(SwingLogo.width * 0.10));
+	   SwingLogo.scrollFactor.set(0, 0);
+	   SwingLogo.antialiasing = true;
+	   //add(SwingLogo);
+
 		camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
@@ -162,6 +162,7 @@ class MainMenuState extends MusicBeatState
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
+			menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
@@ -173,12 +174,10 @@ class MainMenuState extends MusicBeatState
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-		
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -234,7 +233,6 @@ class MainMenuState extends MusicBeatState
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(-1);
-				
 			}
 
 			if (controls.UI_DOWN_P)
@@ -243,20 +241,15 @@ class MainMenuState extends MusicBeatState
 				changeItem(1);
 			}
 
-			if (FlxG.keys.pressed.ESCAPE)
+			if (controls.BACK)
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
 			}
 
-			if (FlxG.keys.justPressed.C)
-				{
-					FlxG.sound.play(Paths.sound('misunderstood'));
-				}
-
-			if (FlxG.keys.pressed.ENTER)
-				{
+			if (controls.ACCEPT)
+			{
 				FlxTween.tween(FlxG.camera, {y: -775}, 1.4, {ease: FlxEase.expoIn});
 				if (optionShit[curSelected] == 'donate')
 				{
@@ -266,7 +259,6 @@ class MainMenuState extends MusicBeatState
 				{
 					selectedSomethin = true;
 					FlxG.sound.play(Paths.sound('confirmMenu'));
-
 
 					menuItems.forEach(function(spr:FlxSprite)
 					{
@@ -285,7 +277,7 @@ class MainMenuState extends MusicBeatState
 							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
 							{
 								var daChoice:String = optionShit[curSelected];
-								weekSprites.animation.play('week' + curSelected);
+
 								switch (daChoice)
 								{
 									case 'story_mode':
@@ -298,7 +290,6 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new CreditsState());
 									case 'options':
 										MusicBeatState.switchState(new OptionsState());
-
 								}
 							});
 						}
@@ -306,7 +297,10 @@ class MainMenuState extends MusicBeatState
 				}
 			}
 			#if desktop
+			else if (FlxG.keys.justPressed.SEVEN)
 			{
+				selectedSomethin = true;
+				MusicBeatState.switchState(new MasterEditorMenu());
 			}
 			#end
 		}
@@ -327,12 +321,10 @@ class MainMenuState extends MusicBeatState
 
 		if (curSelected >= menuItems.length)
 			curSelected = 0;
-			weekSprites.animation.play('week' + curSelected);
+		weekSprites.animation.play('week' + curSelected);
 		if (curSelected < 0)
 			curSelected = menuItems.length - 1;
 		weekSprites.animation.play('week' + curSelected);
-		
-
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{

@@ -1,0 +1,48 @@
+{
+	"songs": [
+		[
+			"spookeez",
+			"spooky",
+			[
+				255,
+				115,
+				215
+			]
+		],
+		[
+			"south",
+			"spooky",
+			[
+				255,
+				115,
+				215
+			]
+		],
+		[
+			"monster",
+			"monster",
+			[
+				140,
+				255,
+				253
+			]
+		]
+	],
+	"hideFreeplay": false,
+	"weekBackground": "bois",
+	"weekCharacters": [
+		"gf",
+		"bf",
+		"gf"
+	],
+	"storyName": "The line cutters",
+	"weekName": "m & m",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

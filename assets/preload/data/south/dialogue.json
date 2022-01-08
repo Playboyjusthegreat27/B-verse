@@ -1,0 +1,102 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "annoyedSKID",
+			"text": "Fine you won just go inside"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confident",
+			"text": "That's what happens when you rap with me,\\ncome on baby girl let's go"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "annoyedBOTH",
+			"text": "You better hope we don't fine you inside \\nbecause we won't be going easy"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "annoyedPUMP",
+			"text": "Your day will turn south!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "annoyedSKID",
+			"text": "Yeah it will go south!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "br",
+			"text": "(Sam and Briah goes inside)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "annoyedSKID",
+			"text": "pump what fu-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "br",
+			"text": "(About 45 minutes later)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "angry",
+			"expression": "AngryBoth",
+			"text": "HEY!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "oh you gotta be FRICKING-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "AngryBoth",
+			"text": "You didn't think we forgot did you?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "upset",
+			"text": "unfortunately, no..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "ConfidentBoth",
+			"text": "Because of that dumb choice now we're gonna\\nruin your date"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "ConfidentSkid",
+			"text": "OY CHICK! NEXT SONG"
+		}
+	]
+}

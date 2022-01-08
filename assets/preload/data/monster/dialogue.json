@@ -1,0 +1,123 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "slightycheer",
+			"text": "That wasn't SO bad we still won-"
+		},
+		{
+			"speed": 0.135,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "why hello there"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "scared",
+			"text": "WHAT THE FRICK"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "What's wrong? Just saying hi to passing \\nguests"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "but I'm pretty sure it's fine"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "relieved",
+			"text": "Yeah I'm sorry it's just that mascot costume"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "what do you mean? I don't have a mascot costume"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "GFconcerned",
+			"text": "w-w-w-what?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I only look like this because I'm not from around here. I can't get rid of the smile either but I mean I'm always happy!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "Listen man I'm not sure what your talking about but I just rap battled to litteral \\nchildren so I kinda wanna go home-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "A rap battle? That sounds fun, let's rap battle"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "huh?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I think we should rap battle!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Does your gf have any music left that she can play?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "GFconfused",
+			"text": "I think I only have house music"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Monster",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "that would work"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "confused",
+			"text": "well uhhhh sure I guess we can rap battle"
+		}
+	]
+}

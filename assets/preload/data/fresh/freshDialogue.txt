@@ -1,8 +1,0 @@
-dad:left bf:right
-:0:talkIdle:0.05:normal:Not bad Sam, but usually rappers don’t copy 
-:0:talkIdle:0.05:normal:lines :]
-:1:confident:0.05:normal:sorry but usually rappers don’t have
-:1:confident:0.05:normal:mcdonald’s hairline
-:0:smug:0.05:normal:he he he nice one just because of that we
-:0:smug:0.05:normal:doin this again
-:1:talk:0.05:normal:bet

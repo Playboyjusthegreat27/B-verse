@@ -1,11 +1,14 @@
 bf
 Bfsit
-sticky
+bfhappy3
+bfweek2
+gfweek3
 dad
 gf
 gf 2
 spooky
 pico
+picoAngy
 mom
 mom-car
 bf-car
@@ -23,9 +26,6 @@ senpaiHD
 spirit
 tankman
 rainbow
-bfhappy3
-bfweek2
-gfweek3
 nothing
 creepy
 glitcher

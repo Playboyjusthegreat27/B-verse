@@ -21,13 +21,14 @@ class PauseSubState extends MusicBeatSubstate
 	var menuItems:Array<String> = [];
 	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Settings', 'Exit to menu'];
 	var settingChoices:Array<String> = [
+		'Dami',
 		'Toggle Practice Mode',
-		'Quick Settings',
 		'Botplay',
+		'Quick Settings',
 		'BACK'
 	];
 	var difficultyChoices = ['Normal', 'Hard', 'BACK'];
-	var quickSettings:Array<String> = ['Downscroll', 'Middlescroll','Ghost Tapping', 'Biros soundcloud', 'BACK'];
+	var quickSettings:Array<String> = ['Downscroll', 'Middlescroll','Ghost Tapping', 'Hitsounds', 'Biros soundcloud', 'BACK'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -175,6 +176,9 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.cpuControlled = !PlayState.cpuControlled;
 					PlayState.usedPractice = true;
 					botplayText.visible = PlayState.cpuControlled;
+					case 'Dami':
+						ClientPrefs.dami = !ClientPrefs.dami;
+						MusicBeatState.switchState(new PlayState());
 				case 'Settings':
 					menuItems = settingChoices;
 					regenMenu();
@@ -187,6 +191,9 @@ class PauseSubState extends MusicBeatSubstate
 				case 'Downscroll':
 					ClientPrefs.downScroll = !ClientPrefs.downScroll;
 					MusicBeatState.switchState(new PlayState());
+					case 'Hitsounds':
+						ClientPrefs.hitSounds = !ClientPrefs.hitSounds;
+						MusicBeatState.switchState(new PlayState());
 				case 'Ghost Tapping':
 						ClientPrefs.ghostTapping = !ClientPrefs.ghostTapping;
 						MusicBeatState.switchState(new PlayState());

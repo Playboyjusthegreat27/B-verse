@@ -1,0 +1,151 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "GFexcited",
+			"text": "Thanks for taking me to this haunted house Sam! I'm really excited for it"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "I'M JUST EXCITED AS YOU ARE! I've been trying to get us here for weeks (on my mama)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "GFexcited",
+			"text": "This is going to be so fun-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "concerned",
+			"text": "wait, how are we going to get in?"
+		},
+		{
+			"speed": 0.07,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "concerned",
+			"text": "there's like so many people"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "GFconcerned",
+			"text": "Oh wait your right! How are we going to get in?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "thinking",
+			"text": "Hmmmmm I'm not sure-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "WAIT I got it!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "gf",
+			"boxState": "normal",
+			"expression": "GFconfused",
+			"text": "what's your idea?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "Let's cut those kids right there! I'm sure they won't care"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "br",
+			"text": "(They try to cut through)"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "AngryBoth",
+			"text": "HEY! We're trying to get in!"
+		},
+		{
+			"speed": 0.04,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "dumbfounded",
+			"text": "I- uhhh I-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "MockinglyBOTH",
+			"text": "I- UhHHH I we're trying to get in"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "AngryBoth",
+			"text": "You pretty boi from tiktiok"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "angry",
+			"text": "Oh yeah? THEN RAP BATTLE ME YOU\\nBOOTLEG ALVIN AND THE CHIPMUNKS"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "annoyedSKID",
+			"text": "Oh boi if you don't-"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "angry",
+			"expression": "ConfidentSkid",
+			"text": "Y'know what chunklenutz we'll take you on!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "thinking",
+			"text": "On god?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "normal",
+			"expression": "ConfidentSkid",
+			"text": "On"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "Bump",
+			"boxState": "angry",
+			"expression": "ConfidentBoth",
+			"text": "GOD!"
+		}
+	]
+}

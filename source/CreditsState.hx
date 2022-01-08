@@ -24,7 +24,7 @@ class CreditsState extends MusicBeatState
 	private var iconArray:Array<AttachedSprite> = [];
 
 	private static var creditsStuff:Array<Dynamic> = [ //Name - Icon name - Description - Link - BG Color
-         ['Team 10 of B verse'],
+		['Team 10 of B verse'],
         ['Biro',        'biro',        'Main Programmer/Animator/pixel artist/Charter/storywritter',                    'https://www.youtube.com/channel/UCkDhHejKkl40_S1Mb5RzMBg',    0xFFFFDD33],
         ['Rainbow',        'rainbow',        'Main concept artist/bg artist/Icon artist (Man I couldnt done it without you)',                    'https://www.youtube.com/channel/UCA93rLHSCGZoradNb0zk1Yg',    0xFFD00027],
 		['Shokora',        'shokora',        'Windows compiler + Coding help (thanks man with for helping me so much with coding)',                    'https://www.youtube.com/channel/UCtt5i053XlP0Ynu_b5dFbeA/videos',    0xFF635B78],
@@ -41,15 +41,18 @@ class CreditsState extends MusicBeatState
 		['Nitro',        'nitro',        'did a lil bit of Charting (your just like my dad)',                    'https://twitter.com/Nitro21X',    0xFF96BA31],
 		['Painty',        'painty',        'Concept artist/artist (shes really nice go check her out)',                    'https://www.instagram.com/candycloud2/',    0xFFF8BBF9],
 		['Nick',        'nick',        'Ay man LISTEN LISTEN hes the pixel guy (AY MAN LISTEN HOLD UP LISTEN AHHH-)',                    'https://www.youtube.com/channel/UCIuV47XDp8-zH-qfQ4slwzg',    0xFFE500E7],
-
-
-
+		[''],
 		['Psych Engine Team'],
 		['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',					'https://twitter.com/Shadow_Mario_',	0xFFFFDD33],
 		['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',				'https://twitter.com/river_oaken',		0xFFC30085],
 		[''],
-		['Special Thanks'],
+		['Engine Contributors'],
+		['shubs',				'shubs',			'New Input System Programmer',						'https://twitter.com/yoshubs',			0xFF4494E6],
+		['PolybiusProxy',		'polybiusproxy',	'.MP4 Video Loader Extension',						'https://twitter.com/polybiusproxy',	0xFFE01F32],
+		['gedehari',			'gedehari',			'Chart Editor\'s Sound Waveform base',				'https://twitter.com/gedehari',			0xFFFF9300],
 		['Keoiki',				'keoiki',			'Note Splash Animations',							'https://twitter.com/Keoiki_',			0xFFFFFFFF],
+		['SandPlanet',			'sandplanet',		'Mascot\'s Owner\nMain Supporter of the Engine',		'https://twitter.com/SandPlanetNG',		0xFFD10616],
+		['bubba',				'bubba',		'Guest Composer for "Hot Dilf"',	'https://www.youtube.com/channel/UCxQTnLmv0OAS63yzk9pVfaw',	0xFF61536A],
 		[''],
 		["Funkin' Crew"],
 		['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",				'https://twitter.com/ninja_muffin99',	0xFFF73838],
@@ -132,8 +135,8 @@ class CreditsState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		if (FlxG.keys.pressed.ESCAPE)		
-			{
+		if (controls.BACK)
+		{
 			if(colorTween != null) {
 				colorTween.cancel();
 			}

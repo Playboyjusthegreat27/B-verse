@@ -679,6 +679,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 		#if !html5
 		'Framerate', //Apparently 120FPS isn't correctly supported on Browser? Probably it has some V-Sync shit enabled by default, idk
 		#end
+		'Hitsounds',
 		'GAMEPLAY',
 		'Downscroll',
 		'Dami',
@@ -701,15 +702,27 @@ class PreferencesSubstate extends MusicBeatSubstate
 	private var grpTexts:FlxTypedGroup<AttachedText>;
 	private var textNumber:Array<Int> = [];
 
-	private var characterLayer:FlxTypedGroup<Character>;
 	private var showCharacter:Character = null;
+	private var showCharacter2:Character = null;
 	private var descText:FlxText;
 
 	public function new()
 	{
 		super();
-		characterLayer = new FlxTypedGroup<Character>();
-		add(characterLayer);
+		// avoids lagspikes while scrolling through menus!
+		showCharacter = new Character(840, 170, 'bf', true);
+		showCharacter.setGraphicSize(Std.int(showCharacter.width * 0.8));
+		showCharacter.updateHitbox();
+		showCharacter.dance();
+		add(showCharacter);
+		showCharacter.visible = false;
+
+		showCharacter2 = new Character(840, 170, 'dami', true);
+		showCharacter2.setGraphicSize(Std.int(showCharacter2.width * 0.8));
+		showCharacter2.updateHitbox();
+		showCharacter2.dance();
+		add(showCharacter2);
+		showCharacter2.visible = false;
 
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
@@ -802,6 +815,9 @@ class PreferencesSubstate extends MusicBeatSubstate
 			if(showCharacter != null) {
 				showCharacter.alpha = 0;
 			}
+			if(showCharacter2 != null) {
+				showCharacter2.alpha = 0;
+			}
 			descText.alpha = 0;
 			close();
 			FlxG.sound.play(Paths.sound('cancelMenu'));
@@ -857,9 +873,23 @@ class PreferencesSubstate extends MusicBeatSubstate
 
 						case 'Dami':
 							ClientPrefs.dami = !ClientPrefs.dami;
+							showCharacter2.antialiasing = ClientPrefs.globalAntialiasing;
+							for (item in grpOptions) {
+								item.antialiasing = ClientPrefs.globalAntialiasing;
+							}
+							for (i in 0...checkboxArray.length) {
+								var spr:CheckboxThingie = checkboxArray[i];
+								if(spr != null) {
+									spr.antialiasing = ClientPrefs.globalAntialiasing;
+								}
+							}
+							OptionsState.menuBG.antialiasing = ClientPrefs.globalAntialiasing;
 
 					case 'Middlescroll':
 						ClientPrefs.middleScroll = !ClientPrefs.middleScroll;
+						
+						case 'Hitsounds':
+							ClientPrefs.hitSounds = !ClientPrefs.hitSounds;
 
 					case 'Ghost Tapping':
 						ClientPrefs.ghostTapping = !ClientPrefs.ghostTapping;
@@ -919,6 +949,10 @@ class PreferencesSubstate extends MusicBeatSubstate
 			showCharacter.dance();
 		}
 
+		if(showCharacter2 != null && showCharacter2.animation.curAnim.finished) {
+			showCharacter2.dance();
+		}
+
 		if(nextAccept > 0) {
 			nextAccept -= 1;
 		}
@@ -955,6 +989,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 					daText = "IT MAKES YOU INTO DAMIIIIII (warning will not play mid-song animations or anything like that)";
 			case 'Middlescroll':
 				daText = "If checked, hides Opponent's notes and your notes get centered.";
+				case 'Hitsounds':
+					daText = "when u hit a note it plays sound";
 			case 'Ghost Tapping':
 				daText = "If checked, you won't get misses from pressing keys\nwhile there are no notes able to be hit.";
 			case 'Swearing':
@@ -971,8 +1007,6 @@ class PreferencesSubstate extends MusicBeatSubstate
 				daText = "If checked, hides most HUD elements.";
 			case 'Hide Song Length':
 				daText = "If checked, the bar showing how much time is left\nwill be hidden.";
-			case 'Move Camera In Note Direction':
-					daText = "If checked, the camera will move in the note's direction.";
 		}
 		descText.text = daText;
 
@@ -1007,34 +1041,10 @@ class PreferencesSubstate extends MusicBeatSubstate
 			}
 		}
 
-		if(options[curSelected] == 'Anti-Aliasing') {
-			if(showCharacter == null) {
-				showCharacter = new Character(840, 170, 'bf', true);
-				showCharacter.setGraphicSize(Std.int(showCharacter.width * 0.8));
-				showCharacter.updateHitbox();
-				showCharacter.dance();
-				characterLayer.add(showCharacter);
-			}
-		} else if(showCharacter != null) {
-			characterLayer.clear();
-			showCharacter = null;
-		}
-
-	else if(options[curSelected] == 'Dami') {
-		if(showCharacter == null) {
-			showCharacter = new Character(840, 170, 'dami', true);
-			showCharacter.setGraphicSize(Std.int(showCharacter.width * 0.9));
-			showCharacter.updateHitbox();
-			showCharacter.dance();
-			characterLayer.add(showCharacter);
-		}
-	} else if(showCharacter != null) {
-		characterLayer.clear();
-		showCharacter = null;
+		showCharacter.visible = (options[curSelected] == 'Anti-Aliasing');
+		showCharacter2.visible = (options[curSelected] == 'Dami');
+		FlxG.sound.play(Paths.sound('scrollMenu'));
 	}
-
-	FlxG.sound.play(Paths.sound('scrollMenu'));
-}
 
 	function reloadValues() {
 		for (i in 0...checkboxArray.length) {
@@ -1054,10 +1064,12 @@ class PreferencesSubstate extends MusicBeatSubstate
 						daValue = ClientPrefs.flashing;
 					case 'Downscroll':
 						daValue = ClientPrefs.downScroll;
-					case 'Dami':
+						case 'Dami':
 							daValue = ClientPrefs.dami;
 					case 'Middlescroll':
 						daValue = ClientPrefs.middleScroll;
+						case 'Hitsounds':
+							daValue = ClientPrefs.hitSounds;
 					case 'Ghost Tapping':
 						daValue = ClientPrefs.ghostTapping;
 					case 'Swearing':
