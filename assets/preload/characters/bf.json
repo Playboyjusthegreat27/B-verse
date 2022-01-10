@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				25,
-				36
+				-5,
+				35
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -25,8 +25,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				3,
-				-24
+				-17,
+				-43
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -36,8 +36,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-27,
-				57
+				-34,
+				44
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -47,8 +47,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-37,
-				20
+				-54,
+				-6
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
@@ -58,7 +58,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				35,
+				0,
 				48
 			],
 			"anim": "singLEFTmiss",
@@ -69,8 +69,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				1,
-				-6
+				-15,
+				-18
 			],
 			"anim": "singDOWNmiss",
 			"fps": 24,
@@ -80,8 +80,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-26,
-				58
+				-47,
+				44
 			],
 			"anim": "singUPmiss",
 			"fps": 24,
@@ -91,7 +91,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				-27,
+				-59,
 				16
 			],
 			"anim": "singRIGHTmiss",
@@ -102,8 +102,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				38,
-				16
+				14,
+				17
 			],
 			"anim": "hurt",
 			"fps": 24,
@@ -113,7 +113,7 @@
 		{
 			"loop": true,
 			"offsets": [
-				3,
+				-7,
 				-2
 			],
 			"anim": "scared",
@@ -124,8 +124,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				658,
-				65
+				637,
+				24
 			],
 			"anim": "firstDeath",
 			"fps": 24,
@@ -135,8 +135,8 @@
 		{
 			"loop": true,
 			"offsets": [
-				161,
-				1
+				140,
+				-47
 			],
 			"anim": "deathLoop",
 			"fps": 24,
@@ -146,8 +146,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				161,
-				65
+				142,
+				8
 			],
 			"anim": "deathConfirm",
 			"fps": 24,
@@ -156,8 +156,8 @@
 		},
 		{
 			"offsets": [
-				28,
-				38
+				10,
+				48
 			],
 			"loop": false,
 			"fps": 24,
@@ -178,8 +178,8 @@
 		},
 		{
 			"offsets": [
-				-21,
-				-2
+				-20,
+				-28
 			],
 			"loop": false,
 			"fps": 24,
@@ -192,10 +192,10 @@
 				127,
 				55
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "FLUTE",
-			"loop": false,
+			"indices": [],
 			"name": "BF FLUTE"
 		}
 	],

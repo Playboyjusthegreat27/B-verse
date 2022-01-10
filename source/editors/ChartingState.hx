@@ -1400,7 +1400,7 @@ class ChartingState extends MusicBeatState
 				if(note.strumTime > lastConductorPos && ((playSoundBf.checked && note.mustPress) || (playSoundDad.checked && !note.mustPress)) && FlxG.sound.music.playing && note.noteData > -1) {
 					var data:Int = note.noteData % 4;
 					if(!playedSound[data]) {
-						var soundToPlay = 'ChartingTick';
+						var soundToPlay = 'Charting_1';
 						if(_song.player1 == 'gf') { //Easter egg
 							soundToPlay = 'GF_' + Std.string(data + 1);
 						}

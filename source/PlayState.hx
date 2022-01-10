@@ -442,6 +442,14 @@ class PlayState extends MusicBeatState
 			bg.active = false;
 			add(bg);
 
+			case 'shaggy': //Week 2
+			var bg:BGSprite = new BGSprite('shaggy', -700, -630, 0.9, 0.9);
+			bg.antialiasing = true;
+			bg.setGraphicSize(Std.int(bg.width * 0.8));
+			//bg.scrollFactor.set(0.9, 0.9); 
+			bg.active = false;
+			add(bg);
+
 			case 'philly': //Week 3
 				if(!ClientPrefs.lowQuality) {
 					var bg:BGSprite = new BGSprite('philly/sky', -100, 0, 0.1, 0.1);
