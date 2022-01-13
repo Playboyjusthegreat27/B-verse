@@ -1031,7 +1031,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 
 					case 'tutorial':
-						startDialogue(dialogueJson);
+                        LoadingState.loadAndSwitchState(new VideoState("assets/videos/HankFuckingShootsTricky.webm", new PlayState()));
 					case 'bopeebo':
 						startDialogue(dialogueJson);
 					case 'fresh':
