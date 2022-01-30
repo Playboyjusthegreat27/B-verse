@@ -12,7 +12,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "worried",
-			"text": "(Man I wish gf was here instead of going to the eye doctor)"
+			"text": "(Man I wish Briah was here instead of going to the eye doctor)"
 		},
 		{
 			"speed": 0.05,
@@ -40,7 +40,7 @@
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "relieved",
-			"text": "Oh alright sure-"
+			"text": "Oh okay"
 		},
 		{
 			"speed": 0.05,
@@ -54,7 +54,7 @@
 			"portrait": "bf",
 			"boxState": "angry",
 			"expression": "scared",
-			"text": "AY BACK UP WITH THAT I'M ALLERGIC \\TO BANANAS"
+			"text": "HEY BACK UP WITH THAT BANANAS I'M \\ALLERGIC TO BANANAS"
 		},
 		{
 			"speed": 0.05,

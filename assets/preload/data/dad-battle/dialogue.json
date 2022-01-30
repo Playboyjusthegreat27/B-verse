@@ -12,35 +12,28 @@
 			"portrait": "dad",
 			"boxState": "normal",
 			"expression": "tired",
-			"text": "because I'm done going easy, prove that you can rap"
+			"text": "because I’m done going easy on you, prove that you can rap by beating me one last time"
 		},
 		{
 			"speed": 0.05,
 			"portrait": "bf",
 			"boxState": "angry",
 			"expression": "excited",
-			"text": "SUCKA I CAN EASILY BEAT YOU AGAIN"
+			"text": "alr bet BUT THAT LAST SONG WAS GOOD"
 		},
 		{
 			"speed": 0.05,
 			"portrait": "dad",
 			"boxState": "normal",
-			"expression": "tired excited",
-			"text": "I like the enthusiam"
+			"expression": "smug",
+			"text": "Well I learn from my daddad"
 		},
 		{
 			"speed": 0.05,
-			"portrait": "dad",
-			"boxState": "normal",
-			"expression": "tired excited",
-			"text": "but this is a sharp learing curve, play the last song Briah"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "gf",
-			"boxState": "normal",
-			"expression": "GFexcited",
-			"text": "Alight dad!"
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "happy",
+			"text": "Yeah! Well alr daddyOFive let’s rap battle!"
 		}
 	]
 }

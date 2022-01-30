@@ -9,38 +9,17 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "normal",
-			"expression": "confident",
-			"text": "Heh, maybe I'll even beat you one day soon"
-		},
-		{
-			"speed": 0.05,
 			"portrait": "dad",
 			"boxState": "normal",
 			"expression": "smug",
-			"text": "fat chance kid, I've been doing this for years now"
+			"text": "Let's run it back"
 		},
 		{
 			"speed": 0.05,
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "confident",
-			"text": "then why haven't you fixed that oufit yet?"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "dad",
-			"boxState": "normal",
-			"expression": "unamused",
-			"text": "I-"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "dad",
-			"boxState": "normal",
-			"expression": "smug",
-			"text": "let's just start this, you james charles head ah-"
+			"text": "I’ll show YOU rapping"
 		}
 	]
 }

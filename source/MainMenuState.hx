@@ -235,6 +235,16 @@ class MainMenuState extends MusicBeatState
 				changeItem(-1);
 			}
 
+			if (FlxG.keys.anyPressed([RIGHT, D]))
+				{
+                    LoadingState.loadAndSwitchState(new VideoState("assets/videos/Bird.webm", new MainMenuState()));
+				}
+
+				if (FlxG.keys.anyPressed([E]))
+					{
+						LoadingState.loadAndSwitchState(new VideoState("assets/videos/I'msorry.....webm", new MainMenuState()));
+					}
+
 			if (controls.UI_DOWN_P)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));

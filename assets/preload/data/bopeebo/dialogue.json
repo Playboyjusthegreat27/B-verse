@@ -5,42 +5,14 @@
 			"portrait": "gf",
 			"boxState": "normal",
 			"expression": "GFnormal",
-			"text": "I'm not the best at rapping, but my dad is!\\nSo I asked him to help you with..."
-		},
-		{
-			"speed": 0.05,
-			"portrait": "gf",
-			"boxState": "normal",
-			"expression": "GFtalkIdle",
-			"text": "Drum roll please dun dun dun dun "
-		},
-		{
-			"speed": 0.05,
-			"portrait": "gf",
-			"boxState": "normal",
-			"expression": "GFexcited",
-			"text": "RAPPPINGGGGGG"
+			"text": "I'm not the best at rapping, but my dad is!\\nSo i asked him to help you!"
 		},
 		{
 			"speed": 0.05,
 			"portrait": "bf",
 			"boxState": "normal",
 			"expression": "happy",
-			"text": "Awwww you're so adorable, and thank you\\nso much!"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "gf",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "don't worry about it, it's what I do for you"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "bf",
-			"boxState": "angry",
-			"expression": "br",
-			"text": "THEN YOU BETTER EAT SOME PU-"
+			"text": "Awwww you're so sweet, and thank you\\nso much!"
 		},
 		{
 			"speed": 0.05,
@@ -54,7 +26,7 @@
 			"portrait": "bf",
 			"boxState": "angry",
 			"expression": "embarrassed",
-			"text": "OH! I-"
+			"text": "OH- Uhh I-"
 		},
 		{
 			"speed": 0.05,
@@ -75,14 +47,7 @@
 			"portrait": "dad",
 			"boxState": "normal",
 			"expression": "talk",
-			"text": "Sweetie, play the beat for me?"
-		},
-		{
-			"speed": 0.05,
-			"portrait": "gf",
-			"boxState": "normal",
-			"expression": "GFexcited",
-			"text": "you got it dad!"
+			"text": "Briah, do me a favor and play the beat for me?"
 		}
 	]
 }

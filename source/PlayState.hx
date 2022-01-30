@@ -98,6 +98,8 @@ class PlayState extends MusicBeatState
 	public var gfMap:Map<String, Character> = new Map<String, Character>();
 	#end
 
+	public var Fade:FlxSprite;
+
 	public var BF_X:Float = 770;
 	public var BF_Y:Float = 100;
 	public var DAD_X:Float = 100;
@@ -113,6 +115,7 @@ class PlayState extends MusicBeatState
 	public static var isPixelStage:Bool = false;
 	public static var SONG:SwagSong = null;
 	public static var isStoryMode:Bool = false;
+	public static var Fadinglikemydad:Bool = false;
 	public static var storyWeek:Int = 0;
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
@@ -169,6 +172,7 @@ class PlayState extends MusicBeatState
 
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
+	private var FadeCamera:FlxCamera;
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
 	public var camOther:FlxCamera;
@@ -181,6 +185,8 @@ class PlayState extends MusicBeatState
 	var chair:BGSprite;
 	var chair1:BGSprite;
 	var middlechair:BGSprite;
+
+	var polexo:BGSprite;
 
 	var halloweenBG:BGSprite;
 	var halloweenWhite:BGSprite;
@@ -267,12 +273,15 @@ class PlayState extends MusicBeatState
 		practiceMode = false;
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
+		FadeCamera = new FlxCamera();
+		FadeCamera.bgColor.alpha = 0;
 		camHUD = new FlxCamera();
 		camOther = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
 
 		FlxG.cameras.reset(camGame);
+		FlxG.cameras.add(FadeCamera);
 		FlxG.cameras.add(camHUD);
 		FlxG.cameras.add(camOther);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
@@ -283,6 +292,8 @@ class PlayState extends MusicBeatState
 
 		persistentUpdate = true;
 		persistentDraw = true;
+
+		Fadinglikemydad = true;
 
 		if (SONG == null)
 			SONG = Song.loadFromJson('tutorial');
@@ -433,6 +444,12 @@ class PlayState extends MusicBeatState
 			Bgpeople2.setGraphicSize(Std.int(Bgpeople2.width * 0.9));
 			Bgpeople2.antialiasing = true;
 			add(Bgpeople2);
+
+			var polexo:BGSprite = new BGSprite('Pole', -700, -700, 0.9, 0.9);
+			polexo.antialiasing = true;
+			polexo.scrollFactor.set(0.9, 0.9);
+			polexo.active = false;
+			add(polexo);
 
 			case 'spooky2': //Week 2
 			var bg:BGSprite = new BGSprite('Huntervall', -550, -600, 0.9, 0.9);
@@ -700,9 +717,14 @@ class PlayState extends MusicBeatState
 		add(dadGroup);
 		add(boyfriendGroup);
 		
+		if (curStage == 'spooky')
+
+			add(polexo);
+
 		if (curStage == 'stage')
 
 			add(chair1);
+	
 
 		if(curStage == 'spooky') {
 			add(halloweenWhite);
@@ -1031,7 +1053,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 
 					case 'tutorial':
-                        LoadingState.loadAndSwitchState(new VideoState("assets/videos/HankFuckingShootsTricky.webm", new PlayState()));
+						startDialogue(dialogueJson);
 					case 'bopeebo':
 						startDialogue(dialogueJson);
 					case 'fresh':
@@ -1076,6 +1098,16 @@ class PlayState extends MusicBeatState
 		CoolUtil.precacheSound('missnote1');
 		CoolUtil.precacheSound('missnote2');
 		CoolUtil.precacheSound('missnote3');
+
+		Fade = new FlxSprite().loadGraphic(Paths.image('ZOOWEE-'));
+		Fade.width = 1280;
+		Fade.height = 720;
+		Fade.x = 0;
+		Fade.y = 0;
+		Fade.updateHitbox();
+		add(Fade);
+		Fade.cameras = [FadeCamera];
+		Fade.alpha = 1;
 
 		#if desktop
 		// Updating Discord Rich Presence.
@@ -2095,6 +2127,14 @@ class PlayState extends MusicBeatState
 					iconP2.animation.curAnim.curFrame = 1;
 		}
 
+		
+		if (Fadinglikemydad) 
+			{
+				Fade.alpha = 1 - (health / 1.00); // alpha gets to 1 when near 12% health i think :p
+			} else {
+				Fade.alpha = 0;
+			}
+
 		if (FlxG.keys.justPressed.EIGHT && !endingSong && !inCutscene) {
 			persistentUpdate = false;
 			paused = true;
@@ -2540,6 +2580,7 @@ class PlayState extends MusicBeatState
 				gfSpeed = value;
 
 			case 'Blammed Lights':
+				if(ClientPrefs.flashing) {
 				var lightId:Int = Std.parseInt(value1);
 				if(Math.isNaN(lightId)) lightId = 0;
 
@@ -2654,6 +2695,7 @@ class PlayState extends MusicBeatState
 					curLight = 0;
 					curLightEvent = 0;
 				}
+			}
 
 			case 'Kill Henchmen':
 				killHenchmen();
@@ -2728,6 +2770,7 @@ class PlayState extends MusicBeatState
 				char.recalculateDanceIdle();
 
 			case 'Screen Shake':
+				if(ClientPrefs.flashing) {
 				var valuesArray:Array<String> = [value1, value2];
 				var targetsArray:Array<FlxCamera> = [camGame, camHUD];
 				for (i in 0...targetsArray.length) {
@@ -2741,6 +2784,7 @@ class PlayState extends MusicBeatState
 						targetsArray[i].shake(intensity, duration);
 					}
 				}
+			}
 
 			case 'Change Character':
 				var charType:Int = Std.parseInt(value1);
@@ -2811,6 +2855,7 @@ class PlayState extends MusicBeatState
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}
+
 
 	function moveCameraSection(?id:Int = 0):Void {
 		if(SONG.notes[id] == null) return;
@@ -2970,7 +3015,7 @@ class PlayState extends MusicBeatState
 					CustomFadeTransition.nextCamera = camOther;
 					if(FlxTransitionableState.skipNextTransIn) {
 						CustomFadeTransition.nextCamera = null;
-					}
+					}				
 					MusicBeatState.switchState(new StoryMenuState());
 
 					// if ()
