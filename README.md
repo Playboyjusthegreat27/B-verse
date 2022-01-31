@@ -1,13 +1,15 @@
-# Friday Night Funkin' - Psych Engine
-Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier alternative to newbie coders.
+# B-verse
+Source code of Biro cool B-verse mod!
 
-## Installation:
-Follow a Friday Night Funkin' source code compilation tutorial, after this you will need to install LuaJIT.
+Should not be distrubited publicly... yet... probably... maybe...
 
-You can do this with: `haxelib install linc_luajit` on a Command prompt/PowerShell
+Phyche engine by Shadow Mario
 
-...Or if you don't want your mod to be able to run .lua scripts, delete the "LUA_ALLOWED" line on Project.xml
+   Shadow Mario - Coding
+   RiverOaken - Arts and Animations
+   bbpanzu - Assistant Coding
 
+<<<<<<< HEAD
 # B-verse
 Source code of Biro cool B-verse mod!
 
@@ -20,3 +22,6 @@ Phyche engine by Shadow Mario
    bbpanzu - Assistant Coding
 
 Coding probably done by Moonchild6279. 
+=======
+Coding probably done by Moonchild6279. 
+>>>>>>> a9517af2742d97326a7b1f1c9be7a647aa22149a
