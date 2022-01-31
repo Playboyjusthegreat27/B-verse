@@ -1,28 +1,28 @@
 {
 	"songs": [
 		[
-			"spookeez",
+			"Me and the boys",
 			"spooky",
 			[
 				255,
-				115,
-				215
+				133,
+				213
 			]
 		],
 		[
-			"south",
+			"Spittin",
 			"spooky",
 			[
 				255,
-				115,
-				215
+				133,
+				213
 			]
 		],
 		[
-			"monster",
+			"Monster",
 			"monster",
 			[
-				140,
+				146,
 				255,
 				253
 			]
@@ -31,12 +31,12 @@
 	"hideFreeplay": false,
 	"weekBackground": "bois",
 	"weekCharacters": [
-		"gf",
+		"dad",
 		"bf",
 		"gf"
 	],
-	"storyName": "The line cutters",
-	"weekName": "m & m",
+	"storyName": "Day 2: the line cutters",
+	"weekName": "Fortnite kids",
 	"freeplayColor": [
 		146,
 		113,

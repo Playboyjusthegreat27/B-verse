@@ -1,7 +1,7 @@
 {
 	"songs": [
 		[
-			"Bopeebo",
+			"Bra bra",
 			"dad",
 			[
 				146,
@@ -19,7 +19,7 @@
 			]
 		],
 		[
-			"Dad Battle",
+			"Core doors",
 			"dad",
 			[
 				146,
@@ -35,8 +35,8 @@
 		"bf",
 		"gf"
 	],
-	"storyName": "part 2 auditions",
-	"weekName": "Daddy o 5",
+	"storyName": "Your New Week",
+	"weekName": "Custom Week",
 	"freeplayColor": [
 		146,
 		113,
