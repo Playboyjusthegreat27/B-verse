@@ -467,6 +467,14 @@ class PlayState extends MusicBeatState
 			bg.active = false;
 			add(bg);
 
+			case 'momstage': //Week 2
+			var bg:BGSprite = new BGSprite('car', -500, -200, 0.9, 0.9);
+			bg.antialiasing = true;
+			bg.setGraphicSize(Std.int(bg.width * 0.8));
+			bg.scrollFactor.set(0.9, 0.9);
+			bg.active = false;
+			add(bg);
+
 			case 'philly': //Week 3
 				if(!ClientPrefs.lowQuality) {
 					var bg:BGSprite = new BGSprite('philly/sky', -100, 0, 0.1, 0.1);
@@ -1054,23 +1062,23 @@ class PlayState extends MusicBeatState
 
 					case 'tutorial':
 						startDialogue(dialogueJson);
-					case 'bopeebo':
+					case 'bra-bra':
 						startDialogue(dialogueJson);
 					case 'fresh':
 						startDialogue(dialogueJson);
-					case 'dad-battle':
+					case 'core-doors':
 						startDialogue(dialogueJson);
-					case 'south':
+					case 'me-and-the-boys':
 						startDialogue(dialogueJson);
-					case 'spookeez':
+					case 'spittin':
 						startDialogue(dialogueJson);
 					case 'monster':
 						startDialogue(dialogueJson);
-					case 'pico':
+					case 'gabbie':
 						startDialogue(dialogueJson);
-					case 'philly-nice':
+					case 'beat-drop':
 						startDialogue(dialogueJson);
-					case 'blammed':
+					case 'pretty-funky':
 						startDialogue(dialogueJson);
 					case 'satin-panties':
 						startDialogue(dialogueJson);
@@ -3893,7 +3901,7 @@ class PlayState extends MusicBeatState
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();
 
-		if (SONG.song.toLowerCase() == 'dad-battle') //Biro has me locked in the basement please
+		if (SONG.song.toLowerCase() == 'core doors') //Biro has me locked in the basement please
 			{
 				var black:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
 				switch (curStep)

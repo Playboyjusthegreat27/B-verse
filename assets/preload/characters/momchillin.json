@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				154,
+				67
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "IDLE MOM",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				300,
+				70
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "LEFT MOM",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				203,
+				57
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "DOWN MOM",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				306,
+				134
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "UP MOM",
+			"indices": []
+		},
+		{
+			"offsets": [
+				206,
+				74
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "RIGHT MOM"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/momchillin",
+	"position": [
+		-10,
+		-20
+	],
+	"healthicon": "mom",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		140,
+		255
+	],
+	"camera_position": [
+		120,
+		60
+	],
+	"sing_duration": 4,
+	"scale": 0.7
+}
