@@ -12,5 +12,5 @@ Phyche engine by Shadow Mario
 
 Coding done by many persons
 
-# Creater is Brio because he is cool support him
+# Creater is Biro because he is cool support him
 please do. please?
