@@ -7,6 +7,8 @@ import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
+import flixel.addons.display.FlxBackdrop;
+import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
@@ -44,6 +46,8 @@ class FreeplayState extends MusicBeatState
 	var bg:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
+
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Main_Checker'), 0.2, 0.2, true, true);
 
 	override function create()
 	{
@@ -93,6 +97,9 @@ class FreeplayState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
+		add(checker);
+		checker.scrollFactor.set(0, 0.07);
+
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
@@ -100,14 +107,12 @@ class FreeplayState extends MusicBeatState
 		{
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = true;
-			songText.targetY = i;
-			songText.offset.x -= 250;
+			songText.targetX = i;
 			grpSongs.add(songText);
 
 			Paths.currentModDirectory = songs[i].folder;
 			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
 			icon.sprTracker = songText;
-			icon.offset.x -= 250;
 
 			// using a FlxGroup is too much fuss!
 			iconArray.push(icon);
@@ -199,11 +204,13 @@ class FreeplayState extends MusicBeatState
 	}*/
 
 	var instPlaying:Int = -1;
+
+	var leftOrRight:Int = 1;
+
 	private static var vocals:FlxSound = null;
 	override function update(elapsed:Float)
 	{
-		if (FlxG.sound.music != null)
-			Conductor.songPosition = FlxG.sound.music.time;
+ 
 
 		if (FlxG.sound.music.volume < 0.7)
 		{
@@ -221,21 +228,24 @@ class FreeplayState extends MusicBeatState
 		scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + Math.floor(lerpRating * 100) + '%)';
 		positionHighscore();
 
-		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
+		checker.x -= (-0.27/(120/60)) * leftOrRight;
+		checker.y -= -0.63/(120/60);
 
 		var upP = controls.UI_UP_P;
 		var downP = controls.UI_DOWN_P;
+		var leftP = controls.UI_LEFT_P;
+		var rightP = controls.UI_RIGHT_P;
 		var accepted = controls.ACCEPT;
 		var space = FlxG.keys.justPressed.SPACE;
 
 		var shiftMult:Int = 1;
 		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
 
-		if (upP)
+		if (leftP)
 		{
 			changeSelection(-shiftMult);
 		}
-		if (downP)
+		if (rightP)
 		{
 			changeSelection(shiftMult);
 		}
@@ -245,11 +255,6 @@ class FreeplayState extends MusicBeatState
 		if (controls.UI_RIGHT_P)
 			changeDiff(1);
 
-		if (FlxG.keys.justPressed.C)
-			{
-				FlxG.sound.play(Paths.sound('misunderstood'));
-			}
-
 		if (controls.BACK)
 		{
 			if(colorTween != null) {
@@ -258,6 +263,11 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			MusicBeatState.switchState(new MainMenuState());
 		}
+		
+		if (FlxG.keys.anyPressed([F]))
+			{
+				LoadingState.loadAndSwitchState(new VideoState("assets/videos/Saturn.webm", new MainMenuState()));
+			}
 
 		#if PRELOAD_ALL
 		if(space && instPlaying != curSelected)
@@ -277,7 +287,6 @@ class FreeplayState extends MusicBeatState
 			vocals.persist = true;
 			vocals.looped = true;
 			vocals.volume = 0.7;
-			Conductor.changeBPM(PlayState.SONG.bpm);
 			instPlaying = curSelected;
 		}
 		else #end if (accepted)
@@ -318,13 +327,6 @@ class FreeplayState extends MusicBeatState
 		super.update(elapsed);
 	}
 
-	override function beatHit() {
-		super.beatHit();
-
-		if (FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 1 == 0)
-			FlxG.camera.zoom += 0.015;
-	}
-
 	public static function destroyFreeplayVocals() {
 		if(vocals != null) {
 			vocals.stop();
@@ -336,6 +338,9 @@ class FreeplayState extends MusicBeatState
 	function changeDiff(change:Int = 0)
 	{
 		curDifficulty += change;
+
+		leftOrRight = leftOrRight * -1;
+
 
 		if (curDifficulty < 0)
 			curDifficulty = CoolUtil.difficultyStuff.length-1;
@@ -394,13 +399,13 @@ class FreeplayState extends MusicBeatState
 
 		for (item in grpSongs.members)
 		{
-			item.targetY = bullShit - curSelected;
+			item.targetX = bullShit - curSelected;
 			bullShit++;
 
 			item.alpha = 0.6;
 			// item.setGraphicSize(Std.int(item.width * 0.8));
 
-			if (item.targetY == 0)
+			if (item.targetX == 0)
 			{
 				item.alpha = 1;
 				// item.setGraphicSize(Std.int(item.width));

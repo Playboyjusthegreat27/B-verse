@@ -429,7 +429,7 @@ class PlayState extends MusicBeatState
 			chair1.alpha = 0;
 
 			case 'spooky': //Week 2
-			var bg:BGSprite = new BGSprite('spookyhouse', -700, -700, 0.9, 0.9);
+			var bg:BGSprite = new BGSprite('spookyhouse', -700, -600, 0.9, 0.9);
 			bg.antialiasing = true;
 			bg.scrollFactor.set(0.9, 0.9);
 			bg.active = false;
