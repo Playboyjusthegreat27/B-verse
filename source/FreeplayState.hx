@@ -124,12 +124,23 @@ class FreeplayState extends MusicBeatState
 		}
 		WeekData.setDirectoryFromWeek();
 
-		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
-		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
+		var bottomPanel:FlxSprite = new FlxSprite(0, FlxG.height - 100).makeGraphic(FlxG.width, 100, 0xFF000000);
+		bottomPanel.alpha = 0.8;
+		add(bottomPanel);
+
+		scoreText = new FlxText(50, bottomPanel.y + 18, FlxG.width, "", 28);
+		// scoreText.autoSize = false;
+		scoreText.setFormat(Paths.font("Future.ttf"), 32, FlxColor.WHITE, LEFT,OUTLINE,FlxColor.BLACK);
+		// scoreText.screenCenter(X);
+		// scoreText.alignment = RIGHT;
+		scoreText.borderSize = 2;
+
+		add(scoreText);
 
 		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
 		add(scoreBG);
+
 
 		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 		diffText.font = scoreText.font;
@@ -171,7 +182,7 @@ class FreeplayState extends MusicBeatState
 		var leText:String = "Press RESET to Reset your Score and Accuracy.";
 		#end
 		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, 18);
-		text.setFormat(Paths.font("vcr.ttf"), 18, FlxColor.WHITE, RIGHT);
+		text.setFormat(Paths.font("Future.ttf"), 18, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
 		super.create();
@@ -210,7 +221,8 @@ class FreeplayState extends MusicBeatState
 	private static var vocals:FlxSound = null;
 	override function update(elapsed:Float)
 	{
- 
+		if (FlxG.sound.music != null)
+			Conductor.songPosition = FlxG.sound.music.time;
 
 		if (FlxG.sound.music.volume < 0.7)
 		{
@@ -227,6 +239,8 @@ class FreeplayState extends MusicBeatState
 
 		scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + Math.floor(lerpRating * 100) + '%)';
 		positionHighscore();
+
+		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
 
 		checker.x -= (-0.27/(120/60)) * leftOrRight;
 		checker.y -= -0.63/(120/60);
@@ -287,6 +301,7 @@ class FreeplayState extends MusicBeatState
 			vocals.persist = true;
 			vocals.looped = true;
 			vocals.volume = 0.7;
+			Conductor.changeBPM(PlayState.SONG.bpm);
 			instPlaying = curSelected;
 		}
 		else #end if (accepted)
@@ -325,6 +340,13 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 		}
 		super.update(elapsed);
+	}
+
+	override function beatHit() {
+		super.beatHit();
+
+		if (FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 1 == 0)
+			FlxG.camera.zoom += 0.015;
 	}
 
 	public static function destroyFreeplayVocals() {

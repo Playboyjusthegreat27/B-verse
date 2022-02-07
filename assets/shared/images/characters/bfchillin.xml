@@ -40,4 +40,11 @@
 	<SubTexture name="BF UP0003" x="6098" y="1199" width="1275" height="1173" frameX="-16" frameY="-120" frameWidth="1299" frameHeight="1301"/>
 	<SubTexture name="BF UP0004" x="0" y="2500" width="1299" height="1224" frameX="0" frameY="-71" frameWidth="1299" frameHeight="1301"/>
 	<SubTexture name="BF UP0005" x="0" y="2500" width="1299" height="1224" frameX="0" frameY="-71" frameWidth="1299" frameHeight="1301"/>
+	<SubTexture name="BF calpping0000" x="1299" y="2500" width="823" height="1175" frameX="0" frameY="-24" frameWidth="826" frameHeight="1199"/>
+	<SubTexture name="BF calpping0001" x="1299" y="2500" width="823" height="1175" frameX="0" frameY="-24" frameWidth="826" frameHeight="1199"/>
+	<SubTexture name="BF calpping0002" x="2122" y="2500" width="812" height="1199" frameX="-14" frameY="0" frameWidth="826" frameHeight="1199"/>
+	<SubTexture name="BF calpping0003" x="2122" y="2500" width="812" height="1199" frameX="-14" frameY="0" frameWidth="826" frameHeight="1199"/>
+	<SubTexture name="BF calpping0004" x="2122" y="2500" width="812" height="1199" frameX="-14" frameY="0" frameWidth="826" frameHeight="1199"/>
+	<SubTexture name="BF calpping0005" x="2122" y="2500" width="812" height="1199" frameX="-14" frameY="0" frameWidth="826" frameHeight="1199"/>
+	<SubTexture name="BF calpping0006" x="2122" y="2500" width="812" height="1199" frameX="-14" frameY="0" frameWidth="826" frameHeight="1199"/>
 </TextureAtlas>

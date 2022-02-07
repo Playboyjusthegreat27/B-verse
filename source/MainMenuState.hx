@@ -46,6 +46,9 @@ class MainMenuState extends MusicBeatState
 	var weekSprites:FlxSprite;
 	var camFollowPos:FlxObject;
 
+	var leftArrow:FlxSprite;
+	var rightArrow:FlxSprite;
+
 	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Main_Checker'), 0.2, 0.2, true, true);
 
 	override function create()
@@ -68,9 +71,12 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
+		var ui_tex = Paths.getSparrowAtlas('air');
+
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
-		bg.scrollFactor.set(0, yScroll);
+		bg.scrollFactor.x = 0.01;
+		bg.scrollFactor.y = 0;
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
 		bg.screenCenter();
@@ -78,6 +84,7 @@ class MainMenuState extends MusicBeatState
 		//add(bg);
 		weekSprites =  new FlxSprite(0, -45).loadGraphic(Paths.image('StorySelectTest'), true, 1920, 1080);
 		weekSprites.animation.add('week0', [0], 0, false);
+		
 		weekSprites.animation.add('week1', [1], 0, false);
 		weekSprites.animation.add('week2', [2], 0, false);
 		weekSprites.animation.add('week3', [3], 0, false);
@@ -88,85 +95,112 @@ class MainMenuState extends MusicBeatState
 
 		weekSprites.antialiasing = true;
 		weekSprites.updateHitbox();
-		weekSprites.scrollFactor.set(0, yScroll);
-		weekSprites.screenCenter(X);
+		weekSprites.scrollFactor.x = 0.01;
+		weekSprites.scrollFactor.y = 0;
+		weekSprites.screenCenter();
+		weekSprites.antialiasing = ClientPrefs.globalAntialiasing;
+
 		add (weekSprites);
 
 	   add(checker);
 	   checker.scrollFactor.set(0, 0.07);
 
+	   camFollow = new FlxObject(0, 0, 1, 1);
+	   camFollowPos = new FlxObject(0, 0, 1, 1);
+	   add(camFollow);
+	   add(camFollowPos);
 
-	   var Bverse:BGSprite = new BGSprite('B', 710, 40, 1.3, 1.3);
-	   Bverse.setGraphicSize(Std.int(Bverse.width * 0.5));
-	   Bverse.scrollFactor.set(0, 0);
-	   Bverse.updateHitbox();
-	   //add(Bverse);
-
-	   var MainM:BGSprite = new BGSprite('MainM', -10, 590, 1.3, 1.3);
-	   MainM.setGraphicSize(Std.int(MainM.width * 0.6));
-	   MainM.scrollFactor.set(0, 0);
-	   MainM.updateHitbox();
-	   //add(MainM);
-
-	   var spaceTex = Paths.getSparrowAtlas('GF_assets');
-
-	   NHroom = new FlxSprite( 750, -20);
-	   NHroom.frames = spaceTex;
-	   NHroom.animation.addByPrefix('space', 'GF Dancing Beat', 24, true);
-	   NHroom.animation.play('space');
-	   NHroom.setGraphicSize(Std.int(NHroom.width * 0.5));
-	   NHroom.scrollFactor.set(0, 0);
-	   NHroom.antialiasing = true;
-	   //add(NHroom);
-
-	   var spaceTex = Paths.getSparrowAtlas('SwingL');
-
-	   SwingLogo = new FlxSprite( -1080, -980);
-	   SwingLogo.frames = spaceTex;
-	   SwingLogo.animation.addByPrefix('Swing', 'Swing logo', 24, true);
-	   SwingLogo.animation.play('Swing');
-	   SwingLogo.setGraphicSize(Std.int(SwingLogo.width * 0.10));
-	   SwingLogo.scrollFactor.set(0, 0);
-	   SwingLogo.antialiasing = true;
-	   //add(SwingLogo);
-
-		camFollow = new FlxObject(0, 0, 1, 1);
-		camFollowPos = new FlxObject(0, 0, 1, 1);
-		add(camFollow);
-		add(camFollowPos);
-
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
-		magenta.scrollFactor.set(0, yScroll);
-		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
-		magenta.updateHitbox();
-		magenta.screenCenter();
-		magenta.visible = false;
-		magenta.antialiasing = ClientPrefs.globalAntialiasing;
-		magenta.color = 0xFFfd719b;
-		add(magenta);
-		// magenta.scrollFactor.set();
+	   magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+	   magenta.scrollFactor.x = 0.01;
+	   magenta.scrollFactor.y = 0.;
+	   magenta.setGraphicSize(Std.int(magenta.width * 1.175));
+	   magenta.updateHitbox();
+	   magenta.screenCenter();
+	   magenta.visible = false;
+	   magenta.antialiasing = ClientPrefs.globalAntialiasing;
+	   magenta.color = 0xFFfd719b;
+	   add(magenta);
+	   // magenta.scrollFactor.set();
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
+		var Bverse:BGSprite = new BGSprite('B', 710, 40, 1.3, 1.3);
+		Bverse.setGraphicSize(Std.int(Bverse.width * 0.5));
+		Bverse.scrollFactor.set(0, 0);
+		Bverse.updateHitbox();
+		//add(Bverse);
+ 
+		var MainM:BGSprite = new BGSprite('MainM', -10, 590, 1.3, 1.3);
+		MainM.setGraphicSize(Std.int(MainM.width * 0.6));
+		MainM.scrollFactor.set(0, 0);
+		MainM.updateHitbox();
+		//add(MainM);
+ 
+		var spaceTex = Paths.getSparrowAtlas('GF_assets');
+ 
+		NHroom = new FlxSprite( 750, -20);
+		NHroom.frames = spaceTex;
+		NHroom.animation.addByPrefix('space', 'GF Dancing Beat', 24, true);
+		NHroom.animation.play('space');
+		NHroom.setGraphicSize(Std.int(NHroom.width * 0.5));
+		NHroom.scrollFactor.set(0, 0);
+		NHroom.antialiasing = true;
+		//add(NHroom);
+ 
+		var spaceTex = Paths.getSparrowAtlas('SwingL');
+ 
+		SwingLogo = new FlxSprite( -1080, -980);
+		SwingLogo.frames = spaceTex;
+		SwingLogo.animation.addByPrefix('Swing', 'Swing logo', 24, true);
+		SwingLogo.animation.play('Swing');
+		SwingLogo.setGraphicSize(Std.int(SwingLogo.width * 0.10));
+		SwingLogo.scrollFactor.set(0, 0);
+		SwingLogo.antialiasing = true;
+		//add(SwingLogo);
+
+
 		for (i in 0...optionShit.length)
 		{
-			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
+			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 0;
+			var menuItem:FlxSprite = new FlxSprite(0, (i * 340)  + offset);
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			menuItem.screenCenter(X);
+			menuItem.screenCenter();
+			menuItem.x += 1280 * i;
 			menuItems.add(menuItem);
-			var scr:Float = (optionShit.length - 4) * 0.135;
-			if(optionShit.length < 6) scr = 0;
-			menuItem.scrollFactor.set(0, scr);
+			menuItem.scrollFactor.set(1, 0);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 		}
+
+		leftArrow = new FlxSprite(2220, 1222112);
+		leftArrow.frames = ui_tex;
+		leftArrow.animation.addByPrefix('idle', "arrow left");
+		leftArrow.animation.addByPrefix('press', "arrow push left");
+		leftArrow.animation.play('idle');
+		leftArrow.screenCenter();
+		leftArrow.x -= FlxG.width / 2.5;
+		leftArrow.antialiasing = ClientPrefs.globalAntialiasing;
+		leftArrow.scrollFactor.set();
+		add(leftArrow);
+
+		rightArrow = new FlxSprite(0, 1);
+		rightArrow.frames = ui_tex;
+		rightArrow.animation.addByPrefix('idle', 'arrow right');
+		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
+		rightArrow.animation.play('idle');
+		rightArrow.screenCenter();
+		rightArrow.x += FlxG.width / 2;
+		rightArrow.antialiasing = ClientPrefs.globalAntialiasing;
+		rightArrow.scrollFactor.set();
+		add(rightArrow);
+
+			var sprDifficulty:FlxSprite = new FlxSprite(leftArrow.x + 140, leftArrow.y);
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
@@ -229,13 +263,13 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 		{
-			if (controls.UI_UP_P)
+			if (controls.UI_LEFT_P)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(-1);
 			}
 
-			if (FlxG.keys.anyPressed([RIGHT, D]))
+			if (FlxG.keys.anyPressed([B]))
 				{
                     LoadingState.loadAndSwitchState(new VideoState("assets/videos/Bird.webm", new MainMenuState()));
 				}
@@ -245,11 +279,22 @@ class MainMenuState extends MusicBeatState
 						LoadingState.loadAndSwitchState(new VideoState("assets/videos/I'msorry.....webm", new MainMenuState()));
 					}
 
-			if (controls.UI_DOWN_P)
+			if (controls.UI_RIGHT_P)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				changeItem(1);
 			}
+
+			if (controls.UI_RIGHT)
+				rightArrow.animation.play('press')
+			else
+				rightArrow.animation.play('idle');
+
+			if (controls.UI_LEFT)
+				leftArrow.animation.play('press');
+			else
+				leftArrow.animation.play('idle');
+
 
 			if (controls.BACK)
 			{
@@ -319,7 +364,7 @@ class MainMenuState extends MusicBeatState
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
-			spr.screenCenter(X);
+			spr.screenCenter(Y);
 		});
 	}
 
