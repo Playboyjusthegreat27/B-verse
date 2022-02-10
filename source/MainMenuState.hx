@@ -84,7 +84,6 @@ class MainMenuState extends MusicBeatState
 		//add(bg);
 		weekSprites =  new FlxSprite(0, -45).loadGraphic(Paths.image('StorySelectTest'), true, 1920, 1080);
 		weekSprites.animation.add('week0', [0], 0, false);
-		
 		weekSprites.animation.add('week1', [1], 0, false);
 		weekSprites.animation.add('week2', [2], 0, false);
 		weekSprites.animation.add('week3', [3], 0, false);

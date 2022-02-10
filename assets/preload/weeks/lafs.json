@@ -1,7 +1,7 @@
 {
 	"songs": [
 		[
-			"tutorial",
+			"lafs",
 			"gf",
 			[
 				146,
@@ -25,6 +25,6 @@
 		253
 	],
 	"hideStoryMode": false,
-	"weekBefore": "tutorial",
+	"weekBefore": "week1",
 	"startUnlocked": true
 }

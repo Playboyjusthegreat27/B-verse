@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				-93,
-				-180
+				-139,
+				-175
 			],
 			"loop": false,
 			"anim": "cheer",
@@ -13,19 +13,8 @@
 		},
 		{
 			"offsets": [
-				-80,
-				-160
-			],
-			"loop": false,
-			"anim": "singLEFT",
-			"fps": 24,
-			"name": "GF left note",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-103,
-				-163
+				-143,
+				-209
 			],
 			"loop": false,
 			"anim": "singDOWN",
@@ -35,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-110,
-				-145
+				-120,
+				-158
 			],
 			"loop": false,
 			"anim": "singUP",
@@ -46,19 +35,8 @@
 		},
 		{
 			"offsets": [
-				-70,
-				-164
-			],
-			"loop": false,
-			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "GF Right Note",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-102,
-				-175
+				-68,
+				-167
 			],
 			"loop": false,
 			"anim": "danceLeft",
@@ -85,8 +63,8 @@
 		},
 		{
 			"offsets": [
-				-102,
-				-176
+				-68,
+				-167
 			],
 			"loop": false,
 			"anim": "danceRight",
@@ -171,16 +149,38 @@
 			"fps": 24,
 			"name": "gf sad",
 			"indices": []
+		},
+		{
+			"offsets": [
+				-140,
+				-164
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "GF left note"
+		},
+		{
+			"offsets": [
+				-143,
+				-180
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "GF Right Note"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/GF_assets",
+	"image": "characters/GF_moves",
 	"position": [
-		0,
-		0
+		-30,
+		20
 	],
 	"healthicon": "gf",
-	"flip_x": true,
+	"flip_x": false,
 	"healthbar_colors": [
 		255,
 		0,
