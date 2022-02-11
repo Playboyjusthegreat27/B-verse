@@ -376,14 +376,6 @@ class PlayState extends MusicBeatState
 				var bg:BGSprite = new BGSprite('tutorial', -600, -200, 0.9, 0.9);
 				add(bg);
 
-				var Machine:BGSprite = new BGSprite('Machine', -600, -200, 0.9, 0.9);
-				add(Machine);
-
-				var tutorial:BGSprite = new BGSprite('window', -650, 600, 0.9, 0.9);
-				tutorial.setGraphicSize(Std.int(tutorial.width * 1.1));
-				tutorial.updateHitbox();
-				add(tutorial);
-
 			case 'stage': //Week 1
 			var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 			add(bg);

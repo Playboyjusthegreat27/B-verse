@@ -1,4 +1,3 @@
-
 local xx = 520;
 local yy = 450;
 local xx2 = 820;

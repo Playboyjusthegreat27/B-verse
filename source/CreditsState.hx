@@ -25,23 +25,22 @@ class CreditsState extends MusicBeatState
 
 	private static var creditsStuff:Array<Dynamic> = [ //Name - Icon name - Description - Link - BG Color
 		['Team 10 of B verse'],
-        ['Biro',        'biro',        'Main Programmer/Animator/pixel artist/Charter/storywritter',                    'https://www.youtube.com/channel/UCkDhHejKkl40_S1Mb5RzMBg',    0xFFFFDD33],
-        ['Rainbow',        'rainbow',        'Main concept artist/bg artist/Icon artist (Man I couldnt done it without you)',                    'https://www.youtube.com/channel/UCA93rLHSCGZoradNb0zk1Yg',    0xFFD00027],
+        ['Biro',        'biro',        'Main Programmer/Animator/Icon artist/Charter/storywritter',                    'https://www.youtube.com/channel/UCkDhHejKkl40_S1Mb5RzMBg',    0xFFFFDD33],
+        ['Rainbow',        'rainbow',        'Main concept artist/bg artist/Icon artist for credits (Man I couldnt done it without you)',                    'https://www.youtube.com/channel/UCA93rLHSCGZoradNb0zk1Yg',    0xFFD00027],
 		['Shokora',        'shokora',        'Windows compiler + Coding help (thanks man with for helping me so much with coding)',                    'https://www.youtube.com/channel/UCtt5i053XlP0Ynu_b5dFbeA/videos',    0xFF635B78],
 		['Canadiangoose',        'canadiangoose',        'Coding help (HOLY FREAK THANK YOU)',                    'https://twitter.com/PissKitty2006',    0xFFFFFFFF],
 		['Cary',        'cary',        'Coding help (Thanks bro, btw I love ur art style it Inspired me)',                    'https://twitter.com/PissKitty2006',    0xFFFFFFFF],
 		['Kiro',        'kiro',        'THE MUSIC MANNNNN (KIRO YOU ALWAYS BEEN THERE FOR ME BROTHER, I COULDNT DONE IT WITHOUT YOU)',                    'https://www.youtube.com/channel/UCYWbre_6s1DbTpHTRK-GKKQ',    0xFF9933FF],
 		['Milkman',        'milkman',        'Story writter (MANN thank you for making the story I imagine come to life, ur the best homie)',                    'https://www.youtube.com/channel/UCXzfc_osmtS0sEw7Lq7ca4g',    0xFFFFF8F9],
-        ['Saturn',        'saturn',        'Music stuff (everyone check out his music)',                    'https://www.youtube.com/channel/UCk7Q2kTP7-2J2WX0jLkT5tA',    0xFF5B382A],
+        ['Saturn',        'saturn',        'FIRE MUSIC GUY (OMG BRO THIS GUY SLAPS PLEASE CHECK OUT HIS MUSIC)',                    'https://www.youtube.com/channel/UCk7Q2kTP7-2J2WX0jLkT5tA',    0xFF5B382A],
 		['Spacemen',        'knight',        'the music guy/charter ALSO GO CHECK OUT MASHUP (Mashup is the big brother)',                    'https://www.youtube.com/watch?v=cRZFp8Si6po&t=1s',    0xFFE9D75A],
-		['clouditio',        'clouditio',        'The guy who made the monster beat (Keep going with music man I believe in you)',                    'https://www.youtube.com/channel/UCaZmOBbtNhdmcuj2F0glAoA',    0xFFC7C0F7],
+		['clouditio',        'clouditio',        'The guy who made the monster beat (Keep going with music man I believe in you man!)',                    'https://www.youtube.com/channel/UCaZmOBbtNhdmcuj2F0glAoA',    0xFFC7C0F7],
 		['Niko',        'niko',        'MUSIC GUYYYYYYYY (dude this guys music slap harder than my meat)',                    'https://www.youtube.com/channel/UCFV3dbhTKn4CyRqmFL9Dglw',    0xFF6A6A6A],
         ['B00GMAN 08',        'b00gman-08',        'THE PIXEL GUYYYY (Dude he is really go at pixel crap and ur so talented on my mama)',                    'https://www.youtube.com/channel/UCRwMMpIxRh7BHLDk2GxxIyw',    0xFF4169E1],
 		['Nick',        'nick',        'Ay man LISTEN LISTEN hes the pixel guy (AY MAN LISTEN HOLD UP LISTEN AHHH-)',                    'https://www.youtube.com/channel/UCIuV47XDp8-zH-qfQ4slwzg',    0xFFE500E7],
         ['Bagel',        'bagel',        'bg artist/cool art crap (Join if you like bussy but fr thank you for being there for me and I mean it)',                    'https://www.youtube.com/c/BagelByte',    0xFFB06E54],
 		['Dami',        'dami',        'Concept artist (Dami if youre seeing this man your so cool and keep going with art man!)',                    'https://twitter.com/DamiNation2020',    0xFF00FFFB],
-		['Nitro',        'nitro',        'did a lil bit of Charting (your just like my dad)',                    'https://twitter.com/Nitro21X',    0xFF96BA31],
-		['Painty',        'painty',        'Concept artist/artist (shes really nice go check her out)',                    'https://www.instagram.com/candycloud2/',    0xFFF8BBF9],
+		['Painty',        'painty',        'Concept artist for the 1st version of gf (shes really nice go check her out)',                    'https://www.instagram.com/candycloud2/',    0xFFF8BBF9],
 		[''],
 		['Special guys'],
 		['Moro', 'moro', 'animator of WB Shaggy sprites (I redrew his sprites but the animation is there so Ima give him credit)', 'https://twitter.com/Moro0986', 0xFF7027AD],
@@ -70,6 +69,8 @@ class CreditsState extends MusicBeatState
 
 	override function create()
 	{
+		FlxG.sound.playMusic('assets/music/ThanksForPlaying.ogg');
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
@@ -143,6 +144,8 @@ class CreditsState extends MusicBeatState
 				colorTween.cancel();
 			}
 			FlxG.sound.play(Paths.sound('cancelMenu'));
+            FlxG.sound.music.stop();
+			FlxG.sound.playMusic('assets/music/freakyMenu.ogg');
 			MusicBeatState.switchState(new MainMenuState());
 		}
 		if(controls.ACCEPT) {
