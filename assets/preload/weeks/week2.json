@@ -17,15 +17,6 @@
 				133,
 				213
 			]
-		],
-		[
-			"Monster",
-			"monster",
-			[
-				146,
-				255,
-				253
-			]
 		]
 	],
 	"hideFreeplay": false,
@@ -43,6 +34,6 @@
 		253
 	],
 	"hideStoryMode": false,
-	"weekBefore": "tutorial",
+	"weekBefore": "week1",
 	"startUnlocked": true
 }

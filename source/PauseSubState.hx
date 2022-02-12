@@ -35,6 +35,9 @@ class PauseSubState extends MusicBeatSubstate
 	var practiceText:FlxText;
 	var botplayText:FlxText;
 
+	var BFCUTE:FlxSprite;
+    var isBFCUTE:Bool = false;
+
 	public static var transCamera:FlxCamera;
 
 	public function new(x:Float, y:Float)
@@ -60,11 +63,16 @@ class PauseSubState extends MusicBeatSubstate
 		bg.scrollFactor.set();
 		add(bg);
 
-		var person:BGSprite = new BGSprite('roompasue', -660, -500, 0.9, 0.9);
-		person.setGraphicSize(Std.int(person.width * 0.5));
-		blueballedTxt.scrollFactor.set();
-		levelDifficulty.updateHitbox();
-		add(person);
+		var spaceTex = Paths.getSparrowAtlas('BFCUTE');
+ 
+		BFCUTE = new FlxSprite( 360, -100);
+		BFCUTE.frames = spaceTex;
+		BFCUTE.animation.addByPrefix('BFCUTE', 'ANIMATION COOL', 24, true);
+		BFCUTE.animation.play('BFCUTE');
+		BFCUTE.setGraphicSize(Std.int(BFCUTE.width * 0.5));
+		BFCUTE.scrollFactor.set(0, 0);
+		BFCUTE.antialiasing = true;
+		add(BFCUTE);
 
 		var levelInfo:FlxText = new FlxText(20, 15, 0, "", 32);
 		levelInfo.text += PlayState.SONG.song;
@@ -106,6 +114,7 @@ class PauseSubState extends MusicBeatSubstate
 		blueballedTxt.alpha = 0;
 		levelDifficulty.alpha = 0;
 		levelInfo.alpha = 0;
+		BFCUTE.alpha = 0;
 
 		levelInfo.x = FlxG.width - (levelInfo.width + 20);
 		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 20);
@@ -115,6 +124,8 @@ class PauseSubState extends MusicBeatSubstate
 		FlxTween.tween(levelInfo, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
 		FlxTween.tween(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
 		FlxTween.tween(blueballedTxt, {alpha: 1, y: blueballedTxt.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
+		FlxTween.tween(BFCUTE, {alpha: 1, y: BFCUTE.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
+
 
 		grpMenuShit = new FlxTypedGroup<Alphabet>();
 		add(grpMenuShit);
