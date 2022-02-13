@@ -120,6 +120,7 @@ class TitleState extends MusicBeatState
 	}
 
 	var logoBl:FlxSprite;
+	var BUSTIN:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
@@ -166,32 +167,28 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
+		logoBl = new FlxSprite(450, 300);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logoBl.animation.play('bump');
+		logoBl.setGraphicSize(Std.int(logoBl.width * 0.55));
 		logoBl.updateHitbox();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
+		
+		BUSTIN = new FlxSprite(-50, 0);
+		BUSTIN.frames = Paths.getSparrowAtlas('gfDanceTitle');
+		BUSTIN.antialiasing = ClientPrefs.globalAntialiasing;
+		BUSTIN.animation.addByPrefix('bi', 'EVERYBODY IN SMASH', 24);
+		BUSTIN.animation.play('bi');
+		BUSTIN.setGraphicSize(Std.int(BUSTIN.width * 0.55));
+		BUSTIN.updateHitbox();
+		// logoBl.screenCenter();
+		// logoBl.color = FlxColor.BLACK;
+		add(BUSTIN);
 
-		swagShader = new ColorSwap();
-		if(!FlxG.save.data.psykaEasterEgg || !easterEggEnabled) {
-			gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
-			gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-			gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-			gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		}
-		else //Psyka easter egg
-		{
-			gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.04);
-			gfDance.frames = Paths.getSparrowAtlas('psykaDanceTitle');
-			gfDance.animation.addByIndices('danceLeft', 'psykaDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-			gfDance.animation.addByIndices('danceRight', 'psykaDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		}
-		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
-		add(gfDance);
-		gfDance.shader = swagShader.shader;
+
 		add(logoBl);
 		//logoBl.shader = swagShader.shader;
 
@@ -307,11 +304,13 @@ class TitleState extends MusicBeatState
 				if(titleText != null) titleText.animation.play('press');
 
 				FlxTween.tween(titleText, {y: 750}, 1.2, {ease: FlxEase.expoIn});
-				FlxTween.tween(gfDance, {x: 1300}, 1.2, {ease: FlxEase.backIn});
+				FlxTween.tween(BUSTIN, {x: 1300}, 1.2, {ease: FlxEase.backIn});
 				FlxTween.tween(logoBl, {x: -875}, 1.2, {ease: FlxEase.expoIn});
 				FlxTween.tween(FlxG.camera, {zoom: 6, y: -875}, 1.5, {ease: FlxEase.expoInOut});
 
+				if(ClientPrefs.flashing) {
 				FlxG.camera.flash(FlxColor.WHITE, 1);
+				}
 				FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 
 				transitioning = true;
@@ -422,6 +421,9 @@ class TitleState extends MusicBeatState
 
 		if(logoBl != null) 
 			logoBl.animation.play('bump');
+
+		if(BUSTIN != null) 
+			BUSTIN.animation.play('bi');
 
 		if(gfDance != null) {
 			danceLeft = !danceLeft;
