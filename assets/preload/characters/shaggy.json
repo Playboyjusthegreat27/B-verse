@@ -3,83 +3,6 @@
 		{
 			"loop": false,
 			"offsets": [
-				35,
-				47
-			],
-			"anim": "singLEFTmiss",
-			"fps": 24,
-			"name": "BF NOTE LEFT MISS",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				1,
-				-6
-			],
-			"anim": "singDOWNmiss",
-			"fps": 24,
-			"name": "BF NOTE DOWN MISS",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-26,
-				58
-			],
-			"anim": "singUPmiss",
-			"fps": 24,
-			"name": "BF NOTE UP MISS",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-27,
-				16
-			],
-			"anim": "singRIGHTmiss",
-			"fps": 24,
-			"name": "BF NOTE RIGHT MISS",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				658,
-				65
-			],
-			"anim": "firstDeath",
-			"fps": 24,
-			"name": "BF dies",
-			"indices": []
-		},
-		{
-			"loop": true,
-			"offsets": [
-				161,
-				1
-			],
-			"anim": "deathLoop",
-			"fps": 24,
-			"name": "BF Dead Loop",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				161,
-				65
-			],
-			"anim": "deathConfirm",
-			"fps": 24,
-			"name": "BF Dead confirm",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
 				42,
 				207
 			],
@@ -122,15 +45,59 @@
 			"name": "shaggy_left"
 		},
 		{
+			"loop": false,
+			"offsets": [
+				31,
+				204
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "MISSDOWN SHAGGY",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-86,
+				478
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "MISSUP SHAGGY",
+			"indices": []
+		},
+		{
 			"offsets": [
 				76,
 				295
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
+			"loop": false,
 			"name": "shaggy_right"
+		},
+		{
+			"offsets": [
+				102,
+				305
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "MISSRIGHT SHAGGY"
+		},
+		{
+			"offsets": [
+				-56,
+				253
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "MISSLEFT SHAGGY"
 		}
 	],
 	"no_antialiasing": false,
@@ -142,9 +109,9 @@
 	"healthicon": "shaggy",
 	"flip_x": false,
 	"healthbar_colors": [
+		15,
 		255,
-		100,
-		255
+		155
 	],
 	"camera_position": [
 		110,

@@ -1057,7 +1057,7 @@ class PlayState extends MusicBeatState
 						startDialogue(dialogueJson);
 					case 'bra-bra':
 						startDialogue(dialogueJson);
-					case 'fresh':
+					case 'beatboxin':
 						startDialogue(dialogueJson);
 					case 'core-doors':
 						startDialogue(dialogueJson);
