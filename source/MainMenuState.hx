@@ -158,24 +158,23 @@ class MainMenuState extends MusicBeatState
 		SwingLogo.antialiasing = true;
 		//add(SwingLogo);
 
-
 		for (i in 0...optionShit.length)
-		{
-			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 0;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 340)  + offset);
-			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
-			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
-			menuItem.animation.play('idle');
-			menuItem.ID = i;
-			menuItem.screenCenter();
-			menuItem.x += 1280 * i;
-			menuItems.add(menuItem);
-			menuItem.scrollFactor.set(1, 0);
-			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
-			menuItem.updateHitbox();
-		}
+			{
+				var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 0;
+				var menuItem:FlxSprite = new FlxSprite(0, (i * 340)  + offset);
+				menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
+				menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
+				menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
+				menuItem.animation.play('idle');
+				menuItem.ID = i;
+				menuItem.screenCenter();
+				menuItem.x += 1280 * i;
+				menuItems.add(menuItem);
+				menuItem.scrollFactor.set(1, 0);
+				menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+				//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
+				menuItem.updateHitbox();
+			}
 
 		leftArrow = new FlxSprite(2220, 1222112);
 		leftArrow.frames = ui_tex;

@@ -3012,12 +3012,14 @@ class PlayState extends MusicBeatState
 				{
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 
-					cancelFadeTween();
-					CustomFadeTransition.nextCamera = camOther;
-					if(FlxTransitionableState.skipNextTransIn) {
-						CustomFadeTransition.nextCamera = null;
-					}				
-					MusicBeatState.switchState(new StoryMenuState());
+                    if (SONG.song.toLowerCase() == 'pretty funky')
+						{
+							FlxG.switchState(new VideoState("assets/videos/ENDING.webm", new CreditsState()));
+						}
+						else
+						{
+							  FlxG.switchState(new StoryMenuState());
+						}
 
 					// if ()
 					if(!usedPractice) {

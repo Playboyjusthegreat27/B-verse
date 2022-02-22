@@ -1,8 +1,211 @@
 {
 	"song": {
+		"sectionLengths": [],
 		"player1": "bfchillin",
-		"events": [],
-		"gfVersion": "gf-car",
+		"events": [
+			[
+				79775,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				79781.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				81006.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				81012.5,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				82175,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				82181.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				82981.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				82987.5,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				83406.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				83412.5,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				84575,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				84581.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				85806.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				85812.5,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				86975,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				86981.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				87781.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				87787.5,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			],
+			[
+				88206.25,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"BF"
+					]
+				]
+			],
+			[
+				88212.5,
+				[
+					[
+						"Play Animation",
+						"clap",
+						"Dad"
+					]
+				]
+			]
+		],
+		"gfVersion": "gflookinsofine",
+		"player2": "momchillin",
 		"notes": [
 			{
 				"sectionNotes": [],
@@ -2442,166 +2645,22 @@
 				"mustHitSection": false
 			},
 			{
-				"sectionNotes": [
-					[
-						79781.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						79775,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						81012.5,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						81006.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					]
-				],
+				"sectionNotes": [],
 				"lengthInSteps": 16,
 				"mustHitSection": true
 			},
 			{
-				"sectionNotes": [
-					[
-						82181.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						82175,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						83412.5,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						83406.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						82987.5,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						82981.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					]
-				],
+				"sectionNotes": [],
 				"lengthInSteps": 16,
 				"mustHitSection": false
 			},
 			{
-				"sectionNotes": [
-					[
-						84581.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						84575,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						85812.5,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						85806.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					]
-				],
+				"sectionNotes": [],
 				"lengthInSteps": 16,
 				"mustHitSection": false
 			},
 			{
-				"sectionNotes": [
-					[
-						86981.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						86975,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						88212.5,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					],
-					[
-						88206.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						87787.5,
-						-1,
-						"Play Animation",
-						"clap",
-						"BF"
-					],
-					[
-						87781.25,
-						-1,
-						"Play Animation",
-						"clap",
-						"Dad"
-					]
-				],
+				"sectionNotes": [],
 				"lengthInSteps": 16,
 				"mustHitSection": true
 			},
@@ -4619,23 +4678,43 @@
 			},
 			{
 				"lengthInSteps": 16,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
+				"altAnim": false,
 				"bpm": 100,
 				"changeBPM": false,
 				"mustHitSection": true
 			},
 			{
 				"lengthInSteps": 16,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
+				"altAnim": false,
 				"bpm": 100,
 				"changeBPM": false,
 				"mustHitSection": true
 			},
 			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"gfSection": false,
 				"lengthInSteps": 16,
 				"altAnim": false,
 				"typeOfSection": 0,
@@ -4645,12 +4724,11 @@
 				"mustHitSection": true
 			}
 		],
-		"player2": "momchillin",
-		"player3": "gflookinsofine",
+		"player3": null,
 		"song": "lengerie",
 		"needsVoices": true,
-		"validScore": true,
 		"stage": "momstage",
+		"validScore": true,
 		"bpm": 100,
 		"speed": 2.6
 	}
