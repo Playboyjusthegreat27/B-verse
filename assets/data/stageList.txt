@@ -6,4 +6,7 @@ mall
 mallEvil
 school
 schoolEvil
-tank
+momstage
+shaggy
+spooky2
+tutorial

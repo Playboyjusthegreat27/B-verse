@@ -3,7 +3,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				59,
+				58,
 				-20
 			],
 			"anim": "hey",
@@ -83,7 +83,9 @@
 			],
 			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
+			"indices": [
+				0
+			],
 			"name": "spooky UP NOTE"
 		}
 	],
@@ -96,9 +98,9 @@
 	"healthicon": "spooky",
 	"flip_x": false,
 	"healthbar_colors": [
-		213,
-		126,
-		0
+		255,
+		115,
+		255
 	],
 	"camera_position": [
 		0,

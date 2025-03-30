@@ -98,6 +98,17 @@
 			"anim": "singUPmiss",
 			"indices": [],
 			"name": "pico Up note miss"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "confused",
+			"fps": 24,
+			"name": "PICO confused",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -109,12 +120,12 @@
 	"healthicon": "pico",
 	"flip_x": true,
 	"healthbar_colors": [
-		183,
-		216,
-		85
+		255,
+		120,
+		0
 	],
 	"camera_position": [
-		0,
+		210,
 		0
 	],
 	"sing_duration": 4,
