@@ -1,4 +1,5 @@
-name: Build HTML5
+- name: Build HTML5
+  run: haxelib run lime test html5
 
 on:
   workflow_dispatch:
