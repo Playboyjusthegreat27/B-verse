@@ -21,6 +21,12 @@ jobs:
           mkdir -p ~/haxelib
           haxelib setup ~/haxelib
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libffi-dev
+          sudo ln -s /usr/lib/x86_64-linux-gnu/libffi.so.8 /usr/lib/x86_64-linux-gnu/libffi.so.6 || true
+
       - name: Install libraries
         run: |
           haxelib install lime 7.9.0 --quiet
