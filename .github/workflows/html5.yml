@@ -46,7 +46,8 @@ jobs:
 
       - name: Build HTML5
         run: |
-          haxelib run lime test html5
+          haxelib run lime test html5 -verbose
+        timeout-minutes: 30
 
       - name: Upload HTML5 Build
         uses: actions/upload-artifact@v4
