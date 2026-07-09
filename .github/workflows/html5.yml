@@ -52,7 +52,7 @@ jobs:
 
       - name: Build HTML5
         run: |
-          haxelib run lime test html5 -verbose
+          haxelib run lime build html5 -verbose
         timeout-minutes: 30
 
       - name: Upload HTML5 Build
