@@ -25,8 +25,8 @@ jobs:
         run: |
           haxelib install lime 8.0.1 --quiet
           haxelib install openfl 9.3.2 --quiet
-          haxelib install flixel 5.5.0 --quiet
-          haxelib install flixel-addons 3.2.1 --quiet
+          haxelib install flixel 5.4.0 --quiet
+          haxelib install flixel-addons 3.1.1 --quiet
           haxelib install flixel-ui 2.5.0 --quiet
           haxelib install hscript --quiet
           haxelib install actuate --quiet
@@ -36,8 +36,8 @@ jobs:
         run: |
           haxelib set lime 8.0.1
           haxelib set openfl 9.3.2
-          haxelib set flixel 5.5.0
-          haxelib set flixel-addons 3.2.1
+          haxelib set flixel 5.4.0
+          haxelib set flixel-addons 3.1.1
           haxelib set flixel-ui 2.5.0
 
       - name: Setup Lime
@@ -48,7 +48,7 @@ jobs:
         run: |
           haxelib run lime test html5
 
-      - name: Upload Build
+      - name: Upload HTML5 Build
         uses: actions/upload-artifact@v4
         with:
           name: B-Verse-HTML5
