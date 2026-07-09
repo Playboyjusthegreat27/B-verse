@@ -18,7 +18,7 @@ import haxe.io.Path;
 
 class LoadingState extends MusicBeatState
 {
-	inline static var MIN_TIME = 1.0;
+	inline static var MIN_TIME = 0.1;
 
 	static public var dir:String = 'shared';
 
