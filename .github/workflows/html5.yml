@@ -14,7 +14,7 @@ jobs:
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.3.2
+          haxe-version: 4.2.5
 
       - name: Setup haxelib
         run: |
@@ -23,21 +23,21 @@ jobs:
 
       - name: Install libraries
         run: |
-          haxelib install lime 8.0.1 --quiet
-          haxelib install openfl 9.3.2 --quiet
-          haxelib install flixel 5.4.0 --quiet
-          haxelib install flixel-addons 3.1.1 --quiet
+          haxelib install lime 7.9.0 --quiet
+          haxelib install openfl 9.1.0 --quiet
+          haxelib install flixel 4.11.0 --quiet
+          haxelib install flixel-addons 2.10.0 --quiet
           haxelib install flixel-ui 2.5.0 --quiet
           haxelib install hscript --quiet
           haxelib install actuate --quiet
           haxelib install hxcpp --quiet
 
-      - name: Select library versions
+      - name: Select versions
         run: |
-          haxelib set lime 8.0.1
-          haxelib set openfl 9.3.2
-          haxelib set flixel 5.4.0
-          haxelib set flixel-addons 3.1.1
+          haxelib set lime 7.9.0
+          haxelib set openfl 9.1.0
+          haxelib set flixel 4.11.0
+          haxelib set flixel-addons 2.10.0
           haxelib set flixel-ui 2.5.0
 
       - name: Setup Lime
