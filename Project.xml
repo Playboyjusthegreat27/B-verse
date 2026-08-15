@@ -9,8 +9,9 @@
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
-	<!-- <app preloader="Preloader" resizable="true" /> -->
-	<app preloader="flixel.system.FlxPreloader" />
+	<!-- Use custom preloader for web, default for desktop -->
+	<app preloader="Preloader" if="web" resizable="true" />
+	<app preloader="flixel.system.FlxPreloader" unless="web" />
 
 	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
 	<set name="SWF_VERSION" value="11.8" />
@@ -43,7 +44,7 @@
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
 
-	<assets path="assets/preload/videos" include="*.mp3" if="web"/>
+	<assets path="assets/preload/videos" include="*.mp3|*.webm" if="web"/>
     <assets path="assets/preload/videos" include="*.ogg" unless="web"/>
 	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
