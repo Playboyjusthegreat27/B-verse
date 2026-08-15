@@ -6,6 +6,8 @@ import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.BlendMode;
 import flash.display.Sprite;
+import flash.text.TextField;
+import flash.text.TextFormat;
 import flash.Lib;
 import flixel.FlxG;
  
@@ -19,6 +21,8 @@ class Preloader extends FlxBasePreloader
     }
      
     var logo:Sprite;
+    var loadingBar:Sprite;
+    var loadingText:TextField;
      
     override function create():Void 
     {
@@ -33,6 +37,36 @@ class Preloader extends FlxBasePreloader
         logo.x = ((this._width) / 2) - ((logo.width) / 2);
         logo.y = (this._height / 2) - ((logo.height) / 2);
         addChild(logo); //Adds the graphic to the NMEPreloader's buffer.
+        
+        // Create loading bar background
+        loadingBar = new Sprite();
+        loadingBar.graphics.beginFill(0x333333);
+        loadingBar.graphics.drawRect(0, 0, 400, 20);
+        loadingBar.graphics.endFill();
+        loadingBar.x = (this._width / 2) - 200;
+        loadingBar.y = (this._height / 2) + 150;
+        addChild(loadingBar);
+        
+        // Create loading bar fill
+        var barFill:Sprite = new Sprite();
+        barFill.graphics.beginFill(0x00FF00);
+        barFill.graphics.drawRect(0, 0, 1, 20);
+        barFill.graphics.endFill();
+        barFill.name = "barFill";
+        loadingBar.addChild(barFill);
+        
+        // Create loading text
+        loadingText = new TextField();
+        loadingText.text = "Loading: 0%";
+        loadingText.textColor = 0xFFFFFF;
+        loadingText.x = (this._width / 2) - 100;
+        loadingText.y = (this._height / 2) + 180;
+        loadingText.width = 200;
+        var format = new TextFormat();
+        format.size = 16;
+        format.align = "center";
+        loadingText.defaultTextFormat = format;
+        addChild(loadingText);
          
         super.create();
     }
@@ -52,6 +86,16 @@ class Preloader extends FlxBasePreloader
             logo.y = (this._height / 2) - ((logo.height) / 2);
         }
         
+        // Update loading bar
+        var barFill = loadingBar.getChildByName("barFill");
+        if (barFill != null)
+        {
+            barFill.width = (Percent / 100) * 400;
+        }
+        
+        // Update loading text
+        loadingText.text = "Loading: " + Std.int(Percent) + "%";
+         
         super.update(Percent);
     }
 }
