@@ -24,6 +24,14 @@ using StringTools;
 
 class StoryMenuState extends MusicBeatState
 {
+	// HTML5 menu sound effects can fail to decode in this build; keep menu navigation working.
+	inline function playMenuSound(key:String):Void
+	{
+		#if !web
+		FlxG.sound.play(Paths.sound(key));
+		#end
+	}
+
 	// Wether you have to beat the previous week for playing this one
 	// Not recommended, as people usually download your mod for, you know,
 	// playing just the modded week then delete it.
@@ -206,13 +214,13 @@ class StoryMenuState extends MusicBeatState
 			if (controls.UI_UP_P)
 			{
 				changeWeek(-1);
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				playMenuSound('scrollMenu');
 			}
 
 			if (controls.UI_DOWN_P)
 			{
 				changeWeek(1);
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				playMenuSound('scrollMenu');
 			}
 
 			if (controls.UI_RIGHT)
@@ -243,13 +251,13 @@ class StoryMenuState extends MusicBeatState
 			{
 				persistentUpdate = false;
 				openSubState(new ResetScoreSubState('', curDifficulty, '', curWeek));
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				playMenuSound('scrollMenu');
 			}
 		}
 
 		if (controls.BACK && !movedBack && !selectedWeek)
 		{
-			FlxG.sound.play(Paths.sound('cancelMenu'));
+			playMenuSound('cancelMenu');
 			movedBack = true;
             FlxG.sound.music.stop();
 			FlxG.sound.playMusic('assets/music/freakyMenu.mp3');
@@ -274,7 +282,7 @@ class StoryMenuState extends MusicBeatState
 		{
 			if (stopspamming == false)
 			{
-				FlxG.sound.play(Paths.sound('confirmMenu'));
+				playMenuSound('confirmMenu');
 
 				grpWeekText.members[curWeek].startFlashing();
 				if(grpWeekCharacters.members[1].character != '') grpWeekCharacters.members[1].animation.play('confirm');
@@ -319,7 +327,7 @@ class StoryMenuState extends MusicBeatState
 				FreeplayState.destroyFreeplayVocals();
 			});
 		} else {
-			FlxG.sound.play(Paths.sound('YouDipshit'));
+			playMenuSound('YouDipshit');
 		}
 	}
 
