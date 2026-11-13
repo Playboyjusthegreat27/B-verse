@@ -16,6 +16,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import openfl.utils.Assets as OpenFlAssets;
 import lime.net.curl.CURLCode;
 import WeekData;
 
@@ -292,12 +293,23 @@ class StoryMenuState extends MusicBeatState
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
 
+			var songLowercase:String = Paths.formatToSongPath(PlayState.storyPlaylist[0]);
 			var diffic = CoolUtil.difficultyStuff[curDifficulty][1];
 			if(diffic == null) diffic = '';
 
-			PlayState.storyDifficulty = curDifficulty;
+			var chartToLoad:String = songLowercase + diffic;
+			#if MODS_ALLOWED
+			if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + chartToLoad)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + chartToLoad))) {
+			#else
+			if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + chartToLoad))) {
+			#end
+				// Some B-Verse songs only include a default chart, not separate difficulty charts.
+				chartToLoad = songLowercase;
+				curDifficulty = 1;
+			}
 
-			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+			PlayState.storyDifficulty = curDifficulty;
+			PlayState.SONG = Song.loadFromJson(chartToLoad, songLowercase);
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 			PlayState.campaignMisses = 0;
