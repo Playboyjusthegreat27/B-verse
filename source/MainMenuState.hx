@@ -28,7 +28,7 @@ class MainMenuState extends MusicBeatState
 	// HTML5 menu sound effects can fail to decode in this build; keep menu navigation working.
 	inline function playMenuSound(key:String):Void
 	{
-		#if !web
+		#if !js
 		FlxG.sound.play(Paths.sound(key));
 		#end
 	}
