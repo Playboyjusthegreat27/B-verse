@@ -25,6 +25,14 @@ using StringTools;
 
 class MainMenuState extends MusicBeatState
 {
+	// HTML5 menu sound effects can fail to decode in this build; keep menu navigation working.
+	inline function playMenuSound(key:String):Void
+	{
+		#if !web
+		FlxG.sound.play(Paths.sound(key));
+		#end
+	}
+
 	public static var psychEngineVersion:String = '0.4.2'; //This is also used for Discord RPC
 	public static var curSelected:Int = 0;
 
@@ -237,7 +245,7 @@ class MainMenuState extends MusicBeatState
 	var achievementID:Int = 0;
 	function giveAchievement() {
 		add(new AchievementObject(achievementID, camAchievement));
-		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
+		playMenuSound('confirmMenu');
 		trace('Giving achievement ' + achievementID);
 	}
 	#end
@@ -263,7 +271,7 @@ class MainMenuState extends MusicBeatState
 		{
 			if (controls.UI_LEFT_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				playMenuSound('scrollMenu');
 				changeItem(-1);
 			}
 
@@ -279,7 +287,7 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.UI_RIGHT_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				playMenuSound('scrollMenu');
 				changeItem(1);
 			}
 
@@ -297,7 +305,7 @@ class MainMenuState extends MusicBeatState
 			if (controls.BACK)
 			{
 				selectedSomethin = true;
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				playMenuSound('cancelMenu');
 				MusicBeatState.switchState(new TitleState());
 			}
 
@@ -311,7 +319,7 @@ class MainMenuState extends MusicBeatState
 				else
 				{
 					selectedSomethin = true;
-					FlxG.sound.play(Paths.sound('confirmMenu'));
+					playMenuSound('confirmMenu');
 
 					menuItems.forEach(function(spr:FlxSprite)
 					{
