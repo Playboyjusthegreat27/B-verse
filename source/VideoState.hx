@@ -91,13 +91,13 @@ class VideoState extends MusicBeatState
 			GlobalVideo.get().play();
 		}
 		
-		/*if (useSound)
+		/*if (useSound && vidSound != null)
 		{*/
 			//vidSound = FlxG.sound.play(leSource.replace(".webm", ".ogg"));
 		
 			/*new FlxTimer().start(0.1, function(tmr:FlxTimer)
 			{*/
-				vidSound.time = vidSound.length * soundMultiplier;
+				if (vidSound != null) vidSound.time = vidSound.length * soundMultiplier;
 				/*new FlxTimer().start(1.2, function(tmr:FlxTimer)
 				{
 					if (useSound)
