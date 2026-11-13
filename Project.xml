@@ -42,6 +42,8 @@
 	<classpath name="source" />
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
+	<!-- Explicitly register dialogue character JSON as text assets for HTML5. -->
+	<assets path="assets/preload/images/dialogue" include="*.json" rename="assets/images/dialogue" type="text" embed="true" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
 
 	<assets path="assets/preload/videos" include="*.mp3|*.webm" if="web"/>
