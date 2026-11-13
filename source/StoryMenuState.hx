@@ -54,7 +54,7 @@ class StoryMenuState extends MusicBeatState
 	override function create()
 	{
 
-		FlxG.sound.playMusic('assets/music/So_Many_Options_So_Little_Time.ogg');
+		FlxG.sound.playMusic('assets/music/So_Many_Options_So_Little_Time.mp3');
 
 		#if MODS_ALLOWED
 		Paths.destroyLoadedImages();
@@ -252,7 +252,7 @@ class StoryMenuState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			movedBack = true;
             FlxG.sound.music.stop();
-			FlxG.sound.playMusic('assets/music/freakyMenu.ogg');
+			FlxG.sound.playMusic('assets/music/freakyMenu.mp3');
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
