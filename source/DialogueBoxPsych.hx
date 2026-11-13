@@ -97,7 +97,13 @@ class DialogueCharacter extends FlxSprite
 
 		#else
 		var path:String = Paths.getPreloadPath(characterPath);
-		rawJson = Assets.getText(path);
+		try {
+			rawJson = Assets.getText(path);
+		} catch (e:Dynamic) {
+			// Some HTML5 asset manifests resolve dialogue JSON filenames with lowercase IDs.
+			var fallbackPath:String = Paths.getPreloadPath(('images/dialogue/' + character + '.json').toLowerCase());
+			rawJson = Assets.getText(fallbackPath);
+		}
 		#end
 		
 		jsonFile = cast Json.parse(rawJson);
